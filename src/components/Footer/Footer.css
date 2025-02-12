@@ -12,7 +12,7 @@ footer {
   width: 100vw;
   height: 100svh;
   overflow: hidden;
-  background-color: var(--background);
+  background-color: #eee1ce;
   color: var(--foreground);
   z-index: 0;
 }
@@ -52,9 +52,9 @@ footer p {
 }
 
 p.footer-col-header {
-  color: var(--foreground);
   text-transform: uppercase;
   margin-bottom: 0.25em;
+  color: var(--foreground-secondary)
 }
 
 .footer-links {

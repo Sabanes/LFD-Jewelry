@@ -235,7 +235,8 @@
 }
 
 .case-studies-item-inner-link {
-  display: none;
+  display: flex;
+  padding-top: 10px;
 }
 
 .link-icon {
@@ -408,7 +409,7 @@
 
 .project-header h2 {
   text-transform: none;
-  font-size: 4rem;
+  font-size: 3vw; /* Smaller font size */
 }
 
 .project-id {
@@ -420,6 +421,28 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 768px) {
+  .project-header h2 {
+    font-size: 4vw; /* Slightly larger font for tablets */
+    text-align: left;
+  }
+
+  .project-main {
+    width: 40%; /* Adjust project block size for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .project-header h2 {
+    font-size: 5vw; /* Smaller font size for mobile */
+  }
+
+  .project-main {
+    width: 60%; /* Adjust project block size for mobile */
+  }
 }
 
 /* footer */
@@ -565,3 +588,5 @@
     letter-spacing: -0.1rem;
   }
 }
+
+

@@ -295,7 +295,7 @@ export default function Home() {
                 <a href="https://theorchidjewelry.com/" target="_blank"><p className="primary">[ theorchidjewelry.com ]</p></a>
                 <div className="case-studies-item-inner-img">
                   <img
-                    src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/mwyfmzzwihs7rfqlr8m7"
+                    src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/natfo3xg0vcbg5afpvsr"
                     alt="Futuristic AI-generated art"
                   />
                 </div>
@@ -317,7 +317,7 @@ export default function Home() {
                 <a href="https://terzihan.com/pt-pt" target="_blank"><p className="primary">[ terzihan.com ]</p></a>
                 <div className="case-studies-item-inner-img">
                   <img
-                    src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/ktmls4ikhqhrlorkrqci"
+                    src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/smyyisu2ogkeyxvdq890"
                     alt="AI-driven fashion design showcase"
                   />
                 </div>
@@ -340,7 +340,7 @@ export default function Home() {
                 </p></a>
                 <div className="case-studies-item-inner-img">
                   <img
-                    src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/hflwf7exo8a6uo8ea8hg"
+                    src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/ohh8fatms40fwwgkicur"
                     alt="AI-curated artwork showcase"
                   />
                 </div>
@@ -358,21 +358,21 @@ export default function Home() {
           </div>
           <div className="case-studies-items-images col">
             <div className="case-studies-img case-studies-img-1">
-              <img src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/mwyfmzzwihs7rfqlr8m7" alt="" />
+              <img src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/natfo3xg0vcbg5afpvsr" alt="" />
               <div className="hero-img-overlay"></div>
               <div className="case-studies-img-link">
 
               </div>
             </div>
             <div className="case-studies-img case-studies-img-2">
-              <img src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/ktmls4ikhqhrlorkrqci" alt="" />
+              <img src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/smyyisu2ogkeyxvdq890" alt="" />
               <div className="hero-img-overlay"></div>
               <div className="case-studies-img-link">
  
               </div>
             </div>
             <div className="case-studies-img case-studies-img-3">
-              <img src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/hflwf7exo8a6uo8ea8hg" alt="" />
+              <img src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/ohh8fatms40fwwgkicur" alt="" />
               <div className="hero-img-overlay"></div>
               <div className="case-studies-img-link">
 
@@ -397,7 +397,7 @@ export default function Home() {
             <div className="container">
               <ShuffleText
                 as="h2"
-                text="Timeless Art Through a New Lens"
+                text="LFD Jóias Sempre com Qualidade e Estilo"
                 triggerOnScroll={true}
               />
             </div>
@@ -405,13 +405,14 @@ export default function Home() {
 
           <div className="works-content">
             <div className="container">
-              <div className="col">
-                <p className="primary">[ Creative Explorations ]</p>
-              </div>
+  
               <div className="col">
                 <div className="works-copy">
-                  <h2>Can machines innovate Like Human Artists?</h2>
+                  <h2>Quais são os nossos valores?</h2>
                   <p>
+                    These experiments explore the potential of advanced AI
+                    tools, such as Midjourney and DALL-E 3, to reimagine classic
+                    masterpieces through unique and boundary-pushing prompts.
                     These experiments explore the potential of advanced AI
                     tools, such as Midjourney and DALL-E 3, to reimagine classic
                     masterpieces through unique and boundary-pushing prompts.
@@ -446,7 +447,7 @@ export default function Home() {
               </div>
               <div className="project-header">
                 <div className="project-id">
-                  <h2>Archive {item.id}</h2>
+                  <h2> {item.id}</h2>
                 </div>
                 <div className="project-whitespace"></div>
                 <div className="project-title">
@@ -455,7 +456,7 @@ export default function Home() {
               </div>
               <div className="project-info">
                 <div className="project-url">
-                  <Link href={item.url}>( The Journey )</Link>
+                  <Link href={item.url}>( Instagram )</Link>
                 </div>
               </div>
               <Link
