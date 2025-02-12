@@ -325,7 +325,7 @@ export default function Home() {
                 Terzihan é uma joalheria de luxo com mais de 300 anos de história, originada em Mardin e agora presente em Istambul, Lisboa, Flórida e cinco continentes. A marca mantém suas raízes familiares, com os irmãos Can e Cem ao lado do pai na direção criativa. Nossas joias refletem a fusão de culturas mesopotâmicas e mediterrâneas, inspiradas pelo mar e pela riqueza de nossas origens.
                 </p>
                 <div className="case-studies-item-inner-link">
-                  <Link href="/archive">Instagram</Link>
+                  <Link href="https://www.instagram.com/terzihan/">Instagram</Link>
                   <div className="link-icon">
                     <MdArrowOutward size={24} />
                   </div>
