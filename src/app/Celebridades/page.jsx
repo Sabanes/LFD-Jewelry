@@ -247,6 +247,13 @@ const CelebritiesPage = () => {
             font-size: 1.2rem;
             letter-spacing: 0.1rem;
           }
+          /* On mobile devices, set card width to 80% */
+          @media (max-width: 768px) {
+            .card {
+              width: 80%;
+              margin: 0 auto;
+            }
+          }
         `}</style>
       </div>
     </ReactLenis>
