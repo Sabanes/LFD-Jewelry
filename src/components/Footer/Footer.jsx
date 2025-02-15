@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="footer-row footer-content">
             <div className="footer-col">
               <h3>
-              Uma breve viagem para onde a Arte Encontra a Joalharia LFD Jóias © 2025 — All
+              LFD Jóias © 2025 — All
                 rights reserved.
               </h3>
             </div>
@@ -38,9 +38,7 @@ const Footer = () => {
             <p>+</p>
             <p>+</p>
           </div>
-          <div className="footer-row">
-            <h1>LFD</h1>
-          </div>
+
           <div className="footer-row footer-pattern">
             <p>+</p>
             <p>+</p>
