@@ -211,26 +211,18 @@ export default function Home() {
               <div className="col">
                 <div className="intro-copy">
                   <p>
-                    Algora has revolutionized the creative potential of AI,
-                    advancing from basic, low-resolution outputs to producing
-                    hyper-realistic, high-definition visuals that push the
-                    boundaries of imagination and innovation.
-                  </p>
-                  <p>
-                    This progress has opened the doors to powerful visual
-                    creation tools for users of all skill levels, from seasoned
-                    professionals to casual creators. Yet, it has also raised
-                    critical debates around the ethical challenges of
-                    AI-generated content, such as intellectual property
-                    disputes, the spread of false information, and questions
-                    surrounding the essence of true artistic expression.
+                  LFD Jóias - Luxury Fancy Design, Lda. <br />
+
+                  A joalharia é uma verdadeira arte do encontro, capaz de criar laços entre culturas e paises– uma empresa que se destaca tanto na produção de joalharia como na distribuição de marcas internacionais. 
+                <br />
+                  As jóias criadas pela LFD refletem a conexão geográfica e cultural entre Lisboa e Istambul – duas cidades que, através das suas histórias, representam um encontro civilizacional ímpar. Cada peça produzida é um tributo a essa fusão, celebrando a riqueza das culturas que se encontram e se complementam.
                   </p>
                 </div>
                 <div className="prompt-example">
                   <div className="prompt-example-results">
                     <div className="prompt-example-result-item">
                       <div className="prompt-example-result-item-img">
-                        <img className="max" src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/nhjsm2hpkzjhzhpydezt" alt="" />
+                        <img className="max" src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/otdorijgnn5ov1jnrzcj" alt="" />
                       <div className="hero-img-overlay"></div>
                       </div>
                     </div>
