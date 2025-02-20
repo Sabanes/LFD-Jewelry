@@ -1,5 +1,6 @@
 "use client";
 
+import Head from "next/head";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import gsap from "gsap";
@@ -27,7 +28,6 @@ export default function Home() {
     if (lenis) {
       window.lenis = lenis;
     }
-
     return () => {
       window.lenis = null;
     };
@@ -167,306 +167,380 @@ export default function Home() {
   );
 
   return (
-    <ReactLenis
-      root
-      options={{
-        duration: 1.5,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        direction: "vertical",
-        gestureDirection: "vertical",
-        smooth: true,
-        smoothTouch: false,
-        touchMultiplier: 2,
-      }}
-    >
-      <div className="app" ref={container}>
-        <section className="hero" id="Start">
-          <div className="hero-img">
-            <img src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/zbfdqel498wdmcxx2wqm" alt="" />
-          </div>
-          <div className="hero-img-overlay"></div>
-          <div className="hero-img-gradient"></div>
-          <div className="container">
-            <div className="hero-copy">
+    <>
+      <Head>
+        <title>LFD Jóias - Luxury Fancy Design</title>
+        <meta
+          name="description"
+          content="LFD Jóias - Luxury Fancy Design, Lda. is a premier jewelry brand connecting the rich cultural heritage of Lisbon and Istanbul through exquisite craftsmanship."
+        />
+        <meta
+          name="keywords"
+          content="LFD, Jóias, Luxury Jewelry, Lisbon, Istanbul, Terzihan, Dorica, Orchid, Joalharia"
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://yourwebsite.com/" />
 
-              <div className="hero-copy-col">
-                <div className="hero-icon">
-                  <img src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/kfsfmnmbbkniunopzrdk" alt="" />
+        {/* Open Graph / Facebook */}
+        <meta property="og:title" content="LFD Jóias - Luxury Fancy Design" />
+        <meta
+          property="og:description"
+          content="Explore our exquisite collection that celebrates the fusion of cultures between Lisbon and Istanbul."
+        />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/zbfdqel498wdmcxx2wqm"
+        />
+        <meta property="og:url" content="https://yourwebsite.com/" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="LFD Jóias - Luxury Fancy Design" />
+        <meta
+          name="twitter:description"
+          content="Discover exquisite luxury jewelry bridging Lisbon and Istanbul with timeless elegance."
+        />
+        <meta
+          name="twitter:image"
+          content="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/zbfdqel498wdmcxx2wqm"
+        />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "LFD Jóias",
+            "url": "https://yourwebsite.com/",
+            "logo": "https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/kfsfmnmbbkniunopzrdk",
+            "description":
+              "LFD Jóias - Luxury Fancy Design, Lda. is a premier jewelry brand connecting the rich cultural heritage of Lisbon and Istanbul.",
+          })}
+        </script>
+      </Head>
+      <ReactLenis
+        root
+        options={{
+          duration: 1.5,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          direction: "vertical",
+          gestureDirection: "vertical",
+          smooth: true,
+          smoothTouch: false,
+          touchMultiplier: 2,
+        }}
+      >
+        <div className="app" ref={container}>
+          <section className="hero" id="Start">
+            <div className="hero-img">
+              <img
+                src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/zbfdqel498wdmcxx2wqm"
+                alt="Hero background image showcasing LFD Jóias craftsmanship"
+              />
+            </div>
+            <div className="hero-img-overlay"></div>
+            <div className="hero-img-gradient"></div>
+            <div className="container">
+              <div className="hero-copy">
+                <div className="hero-copy-col">
+                  <div className="hero-icon">
+                    <img
+                      src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/kfsfmnmbbkniunopzrdk"
+                      alt="LFD Jóias logo"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section className="intro" id="intro">
-          <div className="geo-bg">
-            <GeometricBackground />
-          </div>
-          <Marquee />
-          <div className="intro-container">
-            <div className="container">
-              <div className="col">
-                <p className="primary">[ SOBRE NOS ]</p>
-              </div>
-              <div className="col">
-                <div className="intro-copy">
-                  <p>
-                  LFD Jóias - Luxury Fancy Design, Lda. <br />
-
-                  A joalharia é uma verdadeira arte do encontro, capaz de criar laços entre culturas e paises– uma empresa que se destaca tanto na produção de joalharia como na distribuição de marcas internacionais. 
-                <br />
-                  As jóias criadas pela LFD refletem a conexão geográfica e cultural entre Lisboa e Istambul – duas cidades que, através das suas histórias, representam um encontro civilizacional ímpar. Cada peça produzida é um tributo a essa fusão, celebrando a riqueza das culturas que se encontram e se complementam.
-                  </p>
+          <section className="intro" id="intro">
+            <div className="geo-bg">
+              <GeometricBackground />
+            </div>
+            <Marquee />
+            <div className="intro-container">
+              <div className="container">
+                <div className="col">
+                  <p className="primary">[ SOBRE NOS ]</p>
                 </div>
-                <div className="prompt-example">
-                  <div className="prompt-example-results">
-                    <div className="prompt-example-result-item">
-                      <div className="prompt-example-result-item-img">
-                        <img className="max" src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/otdorijgnn5ov1jnrzcj" alt="" />
-                      <div className="hero-img-overlay"></div>
+                <div className="col">
+                  <div className="intro-copy">
+                    <p>
+                      LFD Jóias - Luxury Fancy Design, Lda. <br />
+                      A joalharia é uma verdadeira arte do encontro, capaz de criar laços entre culturas e paises– uma empresa que se destaca tanto na produção de joalharia como na distribuição de marcas internacionais.
+                      <br />
+                      As jóias criadas pela LFD refletem a conexão geográfica e cultural entre Lisboa e Istambul – duas cidades que, através das suas histórias, representam um encontro civilizacional ímpar. Cada peça produzida é um tributo a essa fusão, celebrando a riqueza das culturas que se encontram e se complementam.
+                    </p>
+                  </div>
+                  <div className="prompt-example">
+                    <div className="prompt-example-results">
+                      <div className="prompt-example-result-item">
+                        <div className="prompt-example-result-item-img">
+                          <img
+                            className="max"
+                            src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/otdorijgnn5ov1jnrzcj"
+                            alt="Example image showcasing our work"
+                          />
+                          <div className="hero-img-overlay"></div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section className="case-studies" id="case-studies">
-          <div className="case-studies-header">
-            <div className="container">
-              <ShuffleText
-                as="h2"
-                text="Nossas Marcas"
-                triggerOnScroll={true}
-              />
-            </div>
-          </div>
-{/*           <div className="case-studies-content">
-            <div className="container">
-              <div className="col">
-                <p className="primary">[ Marcas que representamos ]</p>
+          <section className="case-studies" id="case-studies">
+            <div className="case-studies-header">
+              <div className="container">
+                <ShuffleText
+                  as="h2"
+                  text="Nossas Marcas"
+                  triggerOnScroll={true}
+                />
               </div>
-              <div className="col">
-                <div className="case-studies-copy">
-                  <h2>A excelência em qualidade e estilo é o que nos define.</h2>
+            </div>
+            {/*
+            <div className="case-studies-content">
+              <div className="container">
+                <div className="col">
+                  <p className="primary">[ Marcas que representamos ]</p>
+                </div>
+                <div className="col">
+                  <div className="case-studies-copy">
+                    <h2>A excelência em qualidade e estilo é o que nos define.</h2>
+                    <p>
+                      Junto às nossas marcas, estamos sempre em busca de alcançar a excelência, oferecendo um atendimento ao cliente impecável e produtos da mais alta qualidade. Nosso compromisso é garantir a satisfação total dos nossos clientes, superando suas expectativas a cada experiência.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            */}
+          </section>
+
+          <section className="case-studies-items">
+            <div className="case-studies-items-content col">
+              {/* First Item - THERZIAN */}
+              <div className="case-studies-item case-studies-item-1">
+                <div className="container">
+                  <h3>Coleção Classica</h3>
+                  <div className="case-studies-item-inner-img">
+                    <img
+                      src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/qfxwox1in9yltezowiwv"
+                      alt="Coleção Classica - LFD Jóias"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Second Item - THERZIAN (Duplicate) */}
+              <div className="case-studies-item case-studies-item-2">
+                <div className="container">
+                  <h3>THERZIAN</h3>
+                  <a
+                    href="https://terzihan.com/pt-pt"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <p className="primary">[ terzihan.com ]</p>
+                  </a>
+                  <div className="case-studies-item-inner-img">
+                    <img
+                      src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/pqbyscwzuwzwhvvvhbj8"
+                      alt="THERZIAN - Luxury Jewelry"
+                    />
+                  </div>
                   <p>
-                  Junto às nossas marcas, estamos sempre em busca de alcançar a excelência, oferecendo um atendimento ao cliente impecável e produtos da mais alta qualidade. Nosso compromisso é garantir a satisfação total dos nossos clientes, superando suas expectativas a cada experiência.
+                    Terzihan é uma joalheria de luxo com mais de 300 anos de história, originada em Mardin e agora presente em Istambul, Lisboa, Flórida e cinco continentes. A marca mantém suas raízes familiares, com os irmãos Can e Cem ao lado do pai na direção criativa. Nossas joias refletem a fusão de culturas mesopotâmicas e mediterrâneas, inspiradas pelo mar e pela riqueza de nossas origens.
                   </p>
+                  <div className="case-studies-item-inner-link">
+                    <Link href="https://www.instagram.com/terzihan/">
+                      Instagram
+                    </Link>
+                    <div className="link-icon">
+                      <MdArrowOutward size={24} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Third Item - Dorica - Italy */}
+              <div className="case-studies-item case-studies-item-3">
+                <div className="container">
+                  <h3>Dorica - Italy</h3>
+                  <a
+                    href="https://dorica.com"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <p className="primary">[ Dorica.com ]</p>
+                  </a>
+                  <div className="case-studies-item-inner-img">
+                    <img
+                      src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/gnkqz2aksx0p5m3bm8lk"
+                      alt="Dorica - Italian Craftsmanship"
+                    />
+                  </div>
+                  <p>
+                    Desde 1989, a D’orica transforma ouro em peças únicas, combinando tradição artesanal com inovação. Especializada em joias sob medida, a marca reflete a excelência do design italiano, sempre com um compromisso sustentável. Como uma empresa certificada B Corp, a D’orica coloca o planeta e as pessoas em primeiro lugar, criando joias que são verdadeiras obras de arte.
+                  </p>
+                  <div className="case-studies-item-inner-link">
+                    <Link
+                      href="https://www.instagram.com/dorica_official?igsh=MTg1c3J6c2ZuMDVhbA%3D%3D"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Instagram
+                    </Link>
+                    <div className="link-icon">
+                      <MdArrowOutward size={24} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Fourth Item - Orchid London */}
+              <div className="case-studies-item case-studies-item-4">
+                <div className="container">
+                  <h3>Orchid London</h3>
+                  <a
+                    href="https://theorchidjewelry.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <p className="primary">[ theorchidjewelry.com ]</p>
+                  </a>
+                  <div className="case-studies-item-inner-img">
+                    <img
+                      src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/loa8r97tgpeuhyhnnhs0"
+                      alt="Orchid London - Contemporary Jewelry"
+                    />
+                  </div>
+                  <p>
+                    A coleção de joias Orchid é inspirada na elegância da flor de orquídea, um símbolo de graça, confiança e sofisticação. Com peças meticulosamente trabalhadas em ouro 18K, combina design contemporâneo com herança cultural, resultando em uma coleção dinâmica e vibrante. Cada joia é uma expressão intemporal de beleza e requinte.
+                  </p>
+                  <div className="case-studies-item-inner-link">
+                    <Link
+                      href="https://www.instagram.com/orchidjewelrylondon?igsh=MTh0emw0bDRla2JiNQ%3D%3D"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Instagram
+                    </Link>
+                    <div className="link-icon">
+                      <MdArrowOutward size={24} />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div> */}
-        </section>
 
-        <section className="case-studies-items">
-  <div className="case-studies-items-content col">
-    {/* First Item - THERZIAN */}
-    <div className="case-studies-item case-studies-item-1">
-      <div className="container">
-        <h3>Coleção Classica</h3>
-        <div className="case-studies-item-inner-img">
-          <img
-            src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/qfxwox1in9yltezowiwv"
-            alt=""
-          />
-        </div>
-
-      </div>
-    </div>
-
-    {/* Second Item - THERZIAN (Duplicate) */}
-    <div className="case-studies-item case-studies-item-2">
-      <div className="container">
-        <h3>THERZIAN</h3>
-        <a href="https://terzihan.com/pt-pt" target="_blank">
-          <p className="primary">[ terzihan.com ]</p>
-        </a>
-        <div className="case-studies-item-inner-img">
-          <img
-            src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/pqbyscwzuwzwhvvvhbj8"
-            alt="AI-driven fashion design showcase"
-          />
-        </div>
-        <p>
-          Terzihan é uma joalheria de luxo com mais de 300 anos de história, originada em Mardin e agora presente em Istambul, Lisboa, Flórida e cinco continentes. A marca mantém suas raízes familiares, com os irmãos Can e Cem ao lado do pai na direção criativa. Nossas joias refletem a fusão de culturas mesopotâmicas e mediterrâneas, inspiradas pelo mar e pela riqueza de nossas origens.
-        </p>
-        <div className="case-studies-item-inner-link">
-          <Link href="https://www.instagram.com/terzihan/">Instagram</Link>
-          <div className="link-icon">
-            <MdArrowOutward size={24} />
-          </div>
-        </div>
-      </div>
-    </div>
-
-    {/* Third Item - Dorica - Italy */}
-    <div className="case-studies-item case-studies-item-3">
-      <div className="container">
-        <h3>Dorica - Italy</h3>
-        <a href="https://dorica.com" target="_blank">
-          <p className="primary">[ Dorica.com ]</p>
-        </a>
-        <div className="case-studies-item-inner-img">
-          <img
-            src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/gnkqz2aksx0p5m3bm8lk"
-            alt="AI-curated artwork showcase"
-          />
-        </div>
-        <p>
-          Desde 1989, a D’orica transforma ouro em peças únicas, combinando tradição artesanal com inovação. Especializada em joias sob medida, a marca reflete a excelência do design italiano, sempre com um compromisso sustentável. Como uma empresa certificada B Corp, a D’orica coloca o planeta e as pessoas em primeiro lugar, criando joias que são verdadeiras obras de arte.
-        </p>
-        <div className="case-studies-item-inner-link">
-          <Link href="https://www.instagram.com/dorica_official?igsh=MTg1c3J6c2ZuMDVhbA%3D%3D">Instagram</Link>
-          <div className="link-icon">
-            <MdArrowOutward size={24} />
-          </div>
-        </div>
-      </div>
-    </div>
-
-    {/* Fourth Item - Orchid London */}
-    <div className="case-studies-item case-studies-item-4">
-      <div className="container">
-        <h3>Orchid London</h3>
-        <a href="https://theorchidjewelry.com/" target="_blank">
-          <p className="primary">[ theorchidjewelry.com ]</p>
-        </a>
-        <div className="case-studies-item-inner-img">
-          <img
-            src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/loa8r97tgpeuhyhnnhs0"
-            alt="Futuristic AI-generated art"
-          />
-        </div>
-        <p>
-          A coleção de joias Orchid é inspirada na elegância da flor de orquídea, um símbolo de graça, confiança e sofisticação. Com peças meticulosamente trabalhadas em ouro 18K, combina design contemporâneo com herança cultural, resultando em uma coleção dinâmica e vibrante. Cada joia é uma expressão intemporal de beleza e requinte.
-        </p>
-        <div className="case-studies-item-inner-link">
-          <Link
-            href="https://www.instagram.com/orchidjewelrylondon?igsh=MTh0emw0bDRla2JiNQ%3D%3D"
-            target="_blank"
-          >
-            Instagram
-          </Link>
-          <div className="link-icon">
-            <MdArrowOutward size={24} />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div className="case-studies-items-images col">
-    {/* First Image - THERZIAN */}
-    <div className="case-studies-img case-studies-img-1">
-      <img
-        src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/qfxwox1in9yltezowiwv"
-        alt="AI-driven fashion design showcase"
-      />
-      <div className="hero-img-overlay"></div>
-      <div className="case-studies-img-link"></div>
-    </div>
-
-    {/* Second Image - THERZIAN Duplicate */}
-    <div className="case-studies-img case-studies-img-2">
-      <img
-        src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/pqbyscwzuwzwhvvvhbj8"
-        alt="AI-driven fashion design showcase"
-      />
-      <div className="hero-img-overlay"></div>
-      <div className="case-studies-img-link"></div>
-    </div>
-
-    {/* Third Image - Dorica */}
-    <div className="case-studies-img case-studies-img-3">
-      <img
-        src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/gnkqz2aksx0p5m3bm8lk"
-        alt="AI-curated artwork showcase"
-      />
-      <div className="hero-img-overlay"></div>
-      <div className="case-studies-img-link"></div>
-    </div>
-
-    {/* Fourth Image - Orchid */}
-    <div className="case-studies-img case-studies-img-4">
-      <img
-        src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/loa8r97tgpeuhyhnnhs0"
-        alt="Futuristic AI-generated art"
-      />
-      <div className="hero-img-overlay"></div>
-      <div className="case-studies-img-link"></div>
-    </div>
-  </div>
-</section>
-
-        <section className="abstract-bg">
-          <div className="strip"></div>
-          <div className="strip"></div>
-          <div className="strip"></div>
-          <div className="strip"></div>
-          <div className="strip"></div>
-          <div className="strip"></div>
-          <div className="strip"></div>
-          <div className="strip"></div>
-        </section>
-
-        <section className="works" id="works">
-          <div className="works-header">
-            <div className="container">
-
-            </div>
-          </div>
-
-          <div className="works-content">
-            <div className="container">
-  
-
-            </div>
-          </div>
-        </section>
-
-        <section className="carousel">
-          {carouselItems.map((item) => (
-            <div
-              key={item.id}
-              id={`project-${item.id}`}
-              className="project"
-              style={{
-                clipPath:
-                  item.id === "01"
-                    ? "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)"
-                    : "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-              }}
-            >
-              <div className="project-bg">
-                <img src={item.bg} alt="" />
-
+            <div className="case-studies-items-images col">
+              {/* First Image - THERZIAN */}
+              <div className="case-studies-img case-studies-img-1">
+                <img
+                  src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/qfxwox1in9yltezowiwv"
+                  alt="THERZIAN showcase image"
+                />
                 <div className="hero-img-overlay"></div>
-                <div className="hero-img-gradient"></div>
-              </div>
-              <div className="project-main">
-                <img src={item.main} alt="" />
-              </div>
-              <div className="project-header">
-                <div className="project-id">
-                  <h2> {item.id}</h2>
-                </div>
-                <div className="project-whitespace"></div>
-
+                <div className="case-studies-img-link"></div>
               </div>
 
-              <Link
-                href={item.url}
-                className="project-overlay-link"
-                aria-label={`View ${item.title} project`}
-              />
+              {/* Second Image - THERZIAN Duplicate */}
+              <div className="case-studies-img case-studies-img-2">
+                <img
+                  src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/pqbyscwzuwzwhvvvhbj8"
+                  alt="THERZIAN secondary showcase image"
+                />
+                <div className="hero-img-overlay"></div>
+                <div className="case-studies-img-link"></div>
+              </div>
+
+              {/* Third Image - Dorica */}
+              <div className="case-studies-img case-studies-img-3">
+                <img
+                  src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/gnkqz2aksx0p5m3bm8lk"
+                  alt="Dorica craftsmanship image"
+                />
+                <div className="hero-img-overlay"></div>
+                <div className="case-studies-img-link"></div>
+              </div>
+
+              {/* Fourth Image - Orchid */}
+              <div className="case-studies-img case-studies-img-4">
+                <img
+                  src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/loa8r97tgpeuhyhnnhs0"
+                  alt="Orchid London collection image"
+                />
+                <div className="hero-img-overlay"></div>
+                <div className="case-studies-img-link"></div>
+              </div>
             </div>
-          ))}
-        </section>
+          </section>
 
-        <Footer />
-      </div>
-    </ReactLenis>
+          <section className="abstract-bg">
+            <div className="strip"></div>
+            <div className="strip"></div>
+            <div className="strip"></div>
+            <div className="strip"></div>
+            <div className="strip"></div>
+            <div className="strip"></div>
+            <div className="strip"></div>
+            <div className="strip"></div>
+          </section>
+
+          <section className="works" id="works">
+            <div className="works-header">
+              <div className="container"></div>
+            </div>
+            <div className="works-content">
+              <div className="container"></div>
+            </div>
+          </section>
+
+          <section className="carousel">
+            {carouselItems.map((item) => (
+              <div
+                key={item.id}
+                id={`project-${item.id}`}
+                className="project"
+                style={{
+                  clipPath:
+                    item.id === "01"
+                      ? "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)"
+                      : "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+                }}
+              >
+                <div className="project-bg">
+                  <img src={item.bg} alt="" />
+                  <div className="hero-img-overlay"></div>
+                  <div className="hero-img-gradient"></div>
+                </div>
+                <div className="project-main">
+                  <img src={item.main} alt="" />
+                </div>
+                <div className="project-header">
+                  <div className="project-id">
+                    <h2>{item.id}</h2>
+                  </div>
+                  <div className="project-whitespace"></div>
+                </div>
+                <Link
+                  href={item.url}
+                  className="project-overlay-link"
+                  aria-label={`View ${item.title} project`}
+                />
+              </div>
+            ))}
+          </section>
+
+          <Footer />
+        </div>
+      </ReactLenis>
+    </>
   );
 }
