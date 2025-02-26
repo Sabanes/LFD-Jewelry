@@ -1,10 +1,10 @@
 :root {
-  --background: #182a2a;
-  --foreground: #fbf6c1;
-  --foreground-secondary: #30726e;
-  --foreground-tertiary: #c4b59c;
-  --background-light: #eee1ce;
-  --foreground-light: #255956;
+  --background: #fff;
+  --foreground: #2b2b2b;
+  --foreground-secondary: #000;
+  --foreground-tertiary: #2b2b2b;
+  --background-light: #fff;
+  --foreground-light: #000;
 }
 
 * {
@@ -63,6 +63,11 @@ h4 {
   font-size: 2rem;
   line-height: 100%;
   letter-spacing: 1.225%;
+}
+
+h6 {
+  color: #fff;
+  font-size: 3.5rem;
 }
 
 p {

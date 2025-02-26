@@ -7,11 +7,11 @@ import "./globals.css";
 export const metadata = {
   title: "LFD Jóias - Luxury Fancy Design",
   description:
-    "Uma das maiores empresas de jóias em Portugal, oferecendo produtos de luxo e design excepcional.",
+    "Uma das melhores empresas de jóias em Portugal, oferecendo jóias de luxo e design excepcional.",
   keywords: "LFD, Jóias, Joalharia, Portugal, Luxury, Design",
   openGraph: {
     title: "LFD Jóias - Luxury Fancy Design",
-    description: "Uma das maiores empresas de jóias em Portugal",
+    description: "Uma das melhores empresas de jóias em Portugal",
     url: "https://lfdjoias.com",
     siteName: "LFD Jóias",
     images: [
@@ -21,7 +21,7 @@ export const metadata = {
         height: 600,
       },
     ],
-    locale: "en_US",
+    locale: "pt_PT",
     type: "website",
   },
   twitter: {
@@ -50,7 +50,7 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "LFD Jóias",
-              url: "https://yourwebsite.com/",
+              url: "https://lfdjoias.com/",
               logo:
                 "https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/kfsfmnmbbkniunopzrdk",
               description:

@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="footer-row footer-content">
             <div className="footer-col">
               <h3>
-              LFD Jóias © 2025 — All
+              LFD Group © 2025 — All
                 rights reserved.
               </h3>
             </div>

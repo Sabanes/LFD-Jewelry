@@ -179,7 +179,7 @@ export default function Home() {
           content="LFD, Jóias, Luxury Jewelry, Lisbon, Istanbul, Terzihan, Dorica, Orchid, Joalharia"
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://yourwebsite.com/" />
+        <link rel="canonical" href="https://yourwcebsite.com/" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:title" content="LFD Jóias - Luxury Fancy Design" />
@@ -324,7 +324,7 @@ export default function Home() {
 
           <section className="case-studies-items">
             <div className="case-studies-items-content col">
-              {/* First Item - THERZIAN */}
+              {/* First Item - Terzihan */}
               <div className="case-studies-item case-studies-item-1">
                 <div className="container">
                   <h3>Coleção Classica</h3>
@@ -337,10 +337,10 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Second Item - THERZIAN (Duplicate) */}
+              {/* Second Item - Terzihan (Duplicate) */}
               <div className="case-studies-item case-studies-item-2">
                 <div className="container">
-                  <h3>THERZIAN</h3>
+                  <h3>Terzihan</h3>
                   <a
                     href="https://terzihan.com/pt-pt"
                     target="_blank"
@@ -351,7 +351,7 @@ export default function Home() {
                   <div className="case-studies-item-inner-img">
                     <img
                       src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/pqbyscwzuwzwhvvvhbj8"
-                      alt="THERZIAN - Luxury Jewelry"
+                      alt="Terzihan - Luxury Jewelry"
                     />
                   </div>
                   <p>
@@ -440,21 +440,21 @@ export default function Home() {
             </div>
 
             <div className="case-studies-items-images col">
-              {/* First Image - THERZIAN */}
+              {/* First Image - Terzihan */}
               <div className="case-studies-img case-studies-img-1">
                 <img
                   src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/qfxwox1in9yltezowiwv"
-                  alt="THERZIAN showcase image"
+                  alt="Terzihan showcase image"
                 />
                 <div className="hero-img-overlay"></div>
                 <div className="case-studies-img-link"></div>
               </div>
 
-              {/* Second Image - THERZIAN Duplicate */}
+              {/* Second Image - Terzihan Duplicate */}
               <div className="case-studies-img case-studies-img-2">
                 <img
                   src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/pqbyscwzuwzwhvvvhbj8"
-                  alt="THERZIAN secondary showcase image"
+                  alt="Terzihan secondary showcase image"
                 />
                 <div className="hero-img-overlay"></div>
                 <div className="case-studies-img-link"></div>
@@ -525,7 +525,7 @@ export default function Home() {
                 </div>
                 <div className="project-header">
                   <div className="project-id">
-                    <h2>{item.id}</h2>
+                    <h6>{item.id}</h6>
                   </div>
                   <div className="project-whitespace"></div>
                 </div>

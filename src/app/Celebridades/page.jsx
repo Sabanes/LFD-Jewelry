@@ -237,7 +237,7 @@ const CelebritiesPage = () => {
             left: 0;
             right: 0;
             background: rgba(0, 0, 0, 0.6);
-            color: var(--foreground);
+            color: #fff;
             padding: 1rem;
             text-align: center;
             transition: opacity 0.3s ease;
