@@ -76,7 +76,7 @@ const Navbar = () => {
               <p>Início</p>
             </a>
             <a href="#intro" onClick={(e) => handleNavigation(e, "intro")}>
-              <p>Casa</p>
+              <p>Sobre nos</p>
             </a>
             <a href="#case-studies" onClick={(e) => handleNavigation(e, "case-studies")}>
               <p>Marcas</p>

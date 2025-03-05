@@ -20,16 +20,22 @@ const Footer = () => {
             <div className="footer-col">
               <div className="footer-sub-col"></div>
               <div className="footer-sub-col footer-links">
-                <p className="footer-col-header">[ * Contactos ]</p>
-                <Link href="/" target="_blank">
-                  <p>Email</p>
-                </Link>
-                <Link href="/">
-                  <p>tlmv</p>
-                </Link>
-                <Link href="/">
-                  <p>Localização</p>
-                </Link>
+                <p className="footer-col-header">[ Contactos ]</p>
+                <a href="mailto:Info@lfdgroup.net" style={{ textAlign: "right", display: "block" }}>
+  <p style={{ margin: 0 }}>Info@lfdgroup.net</p>
+                  </a>
+                    <a href="tel:+351211330703" style={{ textAlign: "right", display: "block" }}>
+                      <p style={{ margin: 0 }}>+351211330703</p>
+                    </a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Avenida+da+Liberdade+247A+1250-143+Lisboa+Portugal" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      style={{ textAlign: "right", display: "block",}}>
+                      <p style={{ margin: 0, }}>
+                        Avenida da Liberdade 247A <br />
+                        1250-143 Lisboa - Portugal
+                      </p>
+                  </a>
               </div>
             </div>
           </div>

@@ -36,7 +36,7 @@
 .hero .container .hero-copy {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: right;
   align-items: flex-end;
 }
 
@@ -50,10 +50,9 @@
 }
 
 .hero-icon {
-  width: 240px;
-
-
-
+  width: 230px;
+  margin-left: auto;
+  margin-bottom: 2rem;
 }
 
 /* intro section */
@@ -271,40 +270,7 @@
   background-color: var(--background-light);
 }
 
-.strip {
-  width: 100%;
-  height: 15px;
-  background-color: var(--background);
-}
 
-.strip:nth-child(1) {
-  margin-bottom: 5px;
-  height: 200px;
-}
-
-.strip:nth-child(2) {
-  margin-bottom: 10px;
-}
-
-.strip:nth-child(3) {
-  margin-bottom: 20px;
-}
-
-.strip:nth-child(4) {
-  margin-bottom: 30px;
-}
-
-.strip:nth-child(5) {
-  margin-bottom: 50px;
-}
-
-.strip:nth-child(6) {
-  margin-bottom: 80px;
-}
-
-.strip:nth-child(7) {
-  margin-bottom: 120px;
-}
 
 /* works */
 .works {

@@ -169,20 +169,20 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>LFD Jóias - Luxury Fancy Design</title>
+        <title>LFD Group - Luxury Fancy Design</title>
         <meta
           name="description"
-          content="LFD Jóias - Luxury Fancy Design, Lda. is a premier jewelry brand connecting the rich cultural heritage of Lisbon and Istanbul through exquisite craftsmanship."
+          content="LFD Group - Luxury Fancy Design, Lda. is a premier jewelry brand connecting the rich cultural heritage of Lisbon and Istanbul through exquisite craftsmanship."
         />
         <meta
           name="keywords"
-          content="LFD, Jóias, Luxury Jewelry, Lisbon, Istanbul, Terzihan, Dorica, Orchid, Joalharia"
+          content="LFD, Group, Luxury Jewelry, Lisbon, Istanbul, Terzihan, Dorica, Orchid, Joalharia"
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://yourwcebsite.com/" />
 
         {/* Open Graph / Facebook */}
-        <meta property="og:title" content="LFD Jóias - Luxury Fancy Design" />
+        <meta property="og:title" content="LFD Group - Luxury Fancy Design" />
         <meta
           property="og:description"
           content="Explore our exquisite collection that celebrates the fusion of cultures between Lisbon and Istanbul."
@@ -196,7 +196,7 @@ export default function Home() {
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="LFD Jóias - Luxury Fancy Design" />
+        <meta name="twitter:title" content="LFD Group - Luxury Fancy Design" />
         <meta
           name="twitter:description"
           content="Discover exquisite luxury jewelry bridging Lisbon and Istanbul with timeless elegance."
@@ -211,11 +211,11 @@ export default function Home() {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "LFD Jóias",
+            "name": "LFD Group",
             "url": "https://yourwebsite.com/",
             "logo": "https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/kfsfmnmbbkniunopzrdk",
             "description":
-              "LFD Jóias - Luxury Fancy Design, Lda. is a premier jewelry brand connecting the rich cultural heritage of Lisbon and Istanbul.",
+              "LFD Group - Luxury Fancy Design, Lda. is a premier jewelry brand connecting the rich cultural heritage of Lisbon and Istanbul.",
           })}
         </script>
       </Head>
@@ -236,7 +236,7 @@ export default function Home() {
             <div className="hero-img">
               <img
                 src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/zbfdqel498wdmcxx2wqm"
-                alt="Hero background image showcasing LFD Jóias craftsmanship"
+                alt="Hero background image showcasing LFD Group craftsmanship"
               />
             </div>
             <div className="hero-img-overlay"></div>
@@ -246,8 +246,8 @@ export default function Home() {
                 <div className="hero-copy-col">
                   <div className="hero-icon">
                     <img
-                      src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/kfsfmnmbbkniunopzrdk"
-                      alt="LFD Jóias logo"
+                      src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/xta7hte4bjpkn7fajt3f"
+                      alt="LFD Group logo"
                     />
                   </div>
                 </div>
@@ -268,7 +268,7 @@ export default function Home() {
                 <div className="col">
                   <div className="intro-copy">
                     <p>
-                      LFD Jóias - Luxury Fancy Design, Lda. <br />
+                      LFD Group - Luxury Fancy Design, Lda. <br />
                       A joalharia é uma verdadeira arte do encontro, capaz de criar laços entre culturas e paises– uma empresa que se destaca tanto na produção de joalharia como na distribuição de marcas internacionais.
                       <br />
                       As jóias criadas pela LFD refletem a conexão geográfica e cultural entre Lisboa e Istambul – duas cidades que, através das suas histórias, representam um encontro civilizacional ímpar. Cada peça produzida é um tributo a essa fusão, celebrando a riqueza das culturas que se encontram e se complementam.
@@ -331,7 +331,7 @@ export default function Home() {
                   <div className="case-studies-item-inner-img">
                     <img
                       src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/qfxwox1in9yltezowiwv"
-                      alt="Coleção Classica - LFD Jóias"
+                      alt="Coleção Classica - LFD Group"
                     />
                   </div>
                 </div>

@@ -97,8 +97,8 @@ const Marquee = () => {
       <div className="marquee-wrapper" ref={wrapperRef}>
         <div className="marquee-content">
           <h1>
-          SOBRE NOS — SOBRE NOS — SOBRE NOS —
-            SOBRE NOS —
+          LFD GROUP — LFD GROUP — LFD GROUP —
+            LFD GROUP —
           </h1>
         </div>
       </div>
