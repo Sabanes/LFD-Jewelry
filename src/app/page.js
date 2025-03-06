@@ -259,7 +259,6 @@ export default function Home() {
             <div className="geo-bg">
               <GeometricBackground />
             </div>
-            <Marquee />
             <div className="intro-container">
               <div className="container">
                 <div className="col">
@@ -280,7 +279,7 @@ export default function Home() {
                         <div className="prompt-example-result-item-img">
                           <img
                             className="max"
-                            src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/otdorijgnn5ov1jnrzcj"
+                            src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/igpm0fgjemyoihwpb9bf"
                             alt="Example image showcasing our work"
                           />
                           <div className="hero-img-overlay"></div>
@@ -298,7 +297,7 @@ export default function Home() {
               <div className="container">
                 <ShuffleText
                   as="h2"
-                  text="Nossas Marcas"
+                  text="Marcas"
                   triggerOnScroll={true}
                 />
               </div>
@@ -355,8 +354,7 @@ export default function Home() {
                     />
                   </div>
                   <p>
-                    Terzihan é uma joalheria de luxo com mais de 300 anos de história, originada em Mardin e agora presente em Istambul, Lisboa, Flórida e cinco continentes. A marca mantém suas raízes familiares, com os irmãos Can e Cem ao lado do pai na direção criativa. Nossas joias refletem a fusão de culturas mesopotâmicas e mediterrâneas, inspiradas pelo mar e pela riqueza de nossas origens.
-                  </p>
+                  A Terzihan é uma joalharia de luxo com mais de 300 anos de história, originária de Mardin e atualmente presente em Istambul, Lisboa, Miami e Dubai. A marca mantém as suas raízes familiares, com os irmãos Can e Cem ao lado do pai, Murat Terzihan, na direção criativa. As joias refletem a fusão das culturas mesopotâmicas e mediterrânicas, inspiradas no mar e na riqueza das  origens.                  </p>
                   <div className="case-studies-item-inner-link">
                     <Link href="https://www.instagram.com/terzihan/">
                       Instagram
@@ -371,7 +369,7 @@ export default function Home() {
               {/* Third Item - Dorica - Italy */}
               <div className="case-studies-item case-studies-item-3">
                 <div className="container">
-                  <h3>Dorica - Italy</h3>
+                  <h3>D’Orica </h3>
                   <a
                     href="https://dorica.com"
                     target="_blank"
@@ -386,7 +384,7 @@ export default function Home() {
                     />
                   </div>
                   <p>
-                    Desde 1989, a D’orica transforma ouro em peças únicas, combinando tradição artesanal com inovação. Especializada em joias sob medida, a marca reflete a excelência do design italiano, sempre com um compromisso sustentável. Como uma empresa certificada B Corp, a D’orica coloca o planeta e as pessoas em primeiro lugar, criando joias que são verdadeiras obras de arte.
+                    Desde 1989, a D’Orica transforma ouro em peças únicas, combinando tradição artesanal com inovação. Especializada em joias sob medida, a marca reflete a excelência do design italiano, sempre com um compromisso sustentável. Como uma empresa certificada B Corp, a D’Orica coloca o planeta e as pessoas em primeiro lugar, criando joias que são verdadeiras obras de arte.
                   </p>
                   <div className="case-studies-item-inner-link">
                     <Link
@@ -406,7 +404,7 @@ export default function Home() {
               {/* Fourth Item - Orchid London */}
               <div className="case-studies-item case-studies-item-4">
                 <div className="container">
-                  <h3>Orchid London</h3>
+                  <h3>Orchid</h3>
                   <a
                     href="https://theorchidjewelry.com/"
                     target="_blank"
