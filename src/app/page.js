@@ -232,7 +232,7 @@ export default function Home() {
         }}
       >
         <div className="app" ref={container}>
-          <section className="hero" id="Start">
+          <section className="hero" id="Sobre-nos">
             <div className="hero-img">
               <img
                 src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/zbfdqel498wdmcxx2wqm"
@@ -292,7 +292,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="case-studies" id="case-studies">
+          <section className="case-studies" id="Marcas">
             <div className="case-studies-header">
               <div className="container">
                 <ShuffleText

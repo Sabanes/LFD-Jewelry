@@ -48,7 +48,7 @@ const videoLinks = [
 
 const EventosSection = () => {
   return (
-    <section className="eventos-section">
+    <section className="eventos-section" id="Eventos">
       <h2 style={{ paddingTop: "4rem" }}>Eventos</h2>
       <div className="eventos-grid">
         {videoLinks.map((video, index) => (

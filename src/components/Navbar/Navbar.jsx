@@ -75,16 +75,16 @@ const Navbar = () => {
             <a href="#Start" onClick={(e) => handleNavigation(e, "Start")}>
               <p>Início</p>
             </a>
-            <a href="#intro" onClick={(e) => handleNavigation(e, "intro")}>
+            <a href="#Sobre-nos" onClick={(e) => handleNavigation(e, "Sobre-nos")}>
               <p>Sobre nos</p>
             </a>
-            <a href="#case-studies" onClick={(e) => handleNavigation(e, "case-studies")}>
+            <a href="#Marcas" onClick={(e) => handleNavigation(e, "Marcas")}>
               <p>Marcas</p>
             </a>
             <a href="/Celebridades">
               <p>Celebridades</p>
             </a>
-            <a href="/Celebridades">
+            <a href="/Celebridades/#Eventos">
               <p>Eventos</p>
             </a>
   
