@@ -14,7 +14,7 @@ export const carouselItems = [
     url: "https://terzihan.com/",
   },  
   {
-    id: "Dorica",
+    id: "D'Orica",
     title: "Tradição e inovação em joias.",
     bg: "https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/rzvratu5hwkx5oa2uvzl",
     main: "https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/rzvratu5hwkx5oa2uvzl",
@@ -28,7 +28,7 @@ export const carouselItems = [
     url: "https://theorchidjewelry.com/",
   },
   {
-    id: "Montegeappa",
+    id: "Montegrappa",
     title: "Elegância e sofisticação intemporais.",
     bg: "https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/ijle4ilduhdog0kjjjil",
     main: "https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/ijle4ilduhdog0kjjjil",

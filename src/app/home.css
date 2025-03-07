@@ -26,10 +26,21 @@
 
 .hero-icon {
   position: absolute;
-  top: 6.5rem;
-  right: 2rem;
-  width: 150px;
+  top: 30%; 
+  left: 75%; /* Move it slightly to the right */
+  transform: translateX(-50%, -50%); /* Center it */
+  width: 190px;
   z-index: 10;
+}
+/* Mobile adaptation */
+@media (max-width: 768px) { /* Adjust for tablets and smaller screens */
+  .hero-icon {
+    top: 5rem; /* Move to the top */
+    right: 1rem; /* Position it in the right corner */
+    left: auto; /* Remove left positioning */
+    transform: none; /* Reset transformation */
+    width: 90px; /* Reduce size for smaller screens */
+  }
 }
 
 .about {

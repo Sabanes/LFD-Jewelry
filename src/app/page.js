@@ -246,7 +246,7 @@ export default function Home() {
       alt="LFD Group logo"
     />
   </div>
-  
+
 </section>
 
 
@@ -259,8 +259,7 @@ export default function Home() {
               <div className="about-content">
                 <ShuffleText text={"[ SOBRE NÓS ]"} className="about-primary" />
                 <p className="about-text">
-                  A joalharia é uma verdadeira arte do encontro, capaz de criar laços entre culturas e países – uma empresa que se destaca tanto na produção de joalharia como na distribuição de marcas internacionais.
-                </p>
+                Somos uma empresa que se destaca tanto na produção de joalharia como na distribuição de marcas internacionais. A joalharia é uma verdadeira arte do encontro, capaz de criar laços entre culturas e países                </p>
               </div>
             </div>
             <img

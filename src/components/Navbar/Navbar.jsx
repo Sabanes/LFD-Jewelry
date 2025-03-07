@@ -12,14 +12,14 @@ const MusicToggle = dynamic(() => import("../MusicToggle/MusicToggle"), {
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [lenisReady, setLenisReady] = useState(false);
   const prevScrollPos = useRef(
     typeof window !== "undefined" ? window.pageYOffset : 0
   );
-  
   const pathname = usePathname();
   const router = useRouter();
   const isHomePage = pathname === "/";
-
+  
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
@@ -30,19 +30,50 @@ const Navbar = () => {
       }
       prevScrollPos.current = currentScrollPos;
     };
-
+    
     window.addEventListener("scroll", handleScroll);
+    
+    // Check if Lenis is available and set state when it's ready
+    const checkLenis = () => {
+      if (window.lenis) {
+        setLenisReady(true);
+      } else {
+        setTimeout(checkLenis, 100);
+      }
+    };
+    
+    checkLenis();
+    
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  
+  // When navigating from another page to homepage, handle hash navigation
+  useEffect(() => {
+    if (isHomePage && lenisReady) {
+      const hash = window.location.hash.substring(1);
+      if (hash) {
+        setTimeout(() => {
+          const element = document.getElementById(hash);
+          if (element && window.lenis) {
+            window.lenis.scrollTo(element, {
+              offset: 0,
+              immediate: false,
+              duration: 1.5,
+            });
+          }
+        }, 300); // Small delay to ensure everything is loaded
+      }
+    }
+  }, [isHomePage, lenisReady]);
 
   const handleNavigation = (event, sectionId) => {
     event.preventDefault();
+    
     if (isHomePage) {
-      const lenis = window.lenis;
-      if (lenis) {
+      if (window.lenis) {
         const element = document.getElementById(sectionId);
         if (element) {
-          lenis.scrollTo(element, {
+          window.lenis.scrollTo(element, {
             offset: 0,
             immediate: false,
             duration: 1.5,
@@ -52,6 +83,7 @@ const Navbar = () => {
     } else {
       router.push(`/#${sectionId}`);
     }
+    
     setMenuOpen(false);
   };
 
@@ -69,7 +101,6 @@ const Navbar = () => {
             <span></span>
           </div>
         </div>
-        
         <div className={`nav-container ${menuOpen ? "open" : ""}`}>
           <div className="nav-links">
             <a href="#Início" onClick={(e) => handleNavigation(e, "Início")}>
@@ -87,7 +118,6 @@ const Navbar = () => {
             <a href="/Eventos">
               <p>Eventos</p>
             </a>
-  
           </div>
           <div className="music-toggle-wrapper">
             <MusicToggle />
