@@ -257,9 +257,9 @@ export default function Home() {
           <section className="about" id="Sobre-nos">
             <div className="about-overlay">
               <div className="about-content">
-                <ShuffleText text={"[ SOBRE NÓS ]"} className="about-primary" />
+                <ShuffleText triggerOnScroll="true" text={"[ SOBRE NÓS ]"} className="about-primary" />
                 <p className="about-text">
-                Somos uma empresa que se destaca tanto na produção de joalharia como na distribuição de marcas internacionais. A joalharia é uma verdadeira arte do encontro, capaz de criar laços entre culturas e países                </p>
+                Somos uma empresa que se destaca tanto na produção de joalharia como na distribuição de marcas internacionais. A Joalharia é uma verdadeira arte, capaz de criar laços entre pessoas, culturas e paises.</p>
               </div>
             </div>
             <img
