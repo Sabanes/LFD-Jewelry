@@ -229,28 +229,25 @@ export default function Home() {
         }}
       >
         <div className="app" ref={container}>
-          <section className="hero" id="Início">
-            <div className="hero-img">
-              <img
-                src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/zbfdqel498wdmcxx2wqm"
-                alt="Hero background image showcasing LFD Group craftsmanship"
-              />
-            </div>
-            <div className="hero-img-overlay"></div>
-            <div className="hero-img-gradient"></div>
-            <div className="container">
-              <div className="hero-copy">
-                <div className="hero-copy-col">
-                  <div className="hero-icon">
-                    <img
-                      src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/xta7hte4bjpkn7fajt3f"
-                      alt="LFD Group logo"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+        <section className="hero" id="Início">
+  <div className="hero-img">
+    <img
+      src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/zbfdqel498wdmcxx2wqm"
+      alt="Hero background image showcasing LFD Group craftsmanship"
+    />
+  </div>
+  <div className="hero-img-overlay"></div>
+  <div className="hero-img-gradient"></div>
+  
+  {/* Moved the hero-icon outside of the container for better positioning */}
+  <div className="hero-icon">
+    <img
+      src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/xta7hte4bjpkn7fajt3f"
+      alt="LFD Group logo"
+    />
+  </div>
+  
+</section>
 
 
 
