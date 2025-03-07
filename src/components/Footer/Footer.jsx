@@ -33,7 +33,7 @@ const Footer = () => {
                 </a>
                 <a className="wraper" href="tel:+351211330703">
                   <p style={{ margin: 0 }}>
-                    +351211330703 <br />{" "}
+                    +351211330703* <br />{" "}
                     <span className="textSmaller">
                       *Chamada para rede fixa nacional
                     </span>
