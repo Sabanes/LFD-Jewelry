@@ -35,38 +35,6 @@ const celebrities = [
   { name: "OPRAH", image: "https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/cqg9oj6xytneycexvqy9" },
   { name: "TRACE ELLIS ROSS", image: "https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/k5jhuoc3c6dhhahrschc" },
 ];
-const videoLinks = [
-  "https://res.cloudinary.com/dcraqvlmb/video/upload/f_auto:video,q_auto/v1/LFD/a69tzxqpxi1kjdgehuox",
-  "https://res.cloudinary.com/dcraqvlmb/video/upload/f_auto:video,q_auto/v1/LFD/jpeutus83ylybuo56icr",
-  "https://res.cloudinary.com/dcraqvlmb/video/upload/f_auto:video,q_auto/v1/LFD/mprbgyt9ihqrr1cg1res",
-  "https://res.cloudinary.com/dcraqvlmb/video/upload/f_auto:video,q_auto/v1/LFD/alxzoyzlh9ayseglffwq",
-  "https://res.cloudinary.com/dcraqvlmb/video/upload/f_auto:video,q_auto/v1/LFD/bgarhsmhncewvfvlu8ut",
-  "https://res.cloudinary.com/dcraqvlmb/video/upload/f_auto:video,q_auto/v1/LFD/vw0n05bcal8ynmp9d8gw",
-  "https://res.cloudinary.com/dcraqvlmb/video/upload/f_auto:video,q_auto/v1/LFD/d28adjbn6wt0uyil93ii",
-  "https://res.cloudinary.com/dcraqvlmb/video/upload/f_auto:video,q_auto/v1/LFD/vh3gpn5usysswr9rul1k",
-];
-
-const EventosSection = () => {
-  return (
-    <section className="eventos-section" id="Eventos">
-      <h2 style={{ paddingTop: "4rem" }}>Eventos</h2>
-      <div className="eventos-grid">
-        {videoLinks.map((video, index) => (
-          <div className="evento" key={index}>
-            <video
-              src={video}
-              muted
-              loop
-              autoPlay
-              playsInline
-              className="video-element"
-            />
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-};
 
 const CelebritiesPage = () => {
   return (
@@ -84,7 +52,7 @@ const CelebritiesPage = () => {
     >
       <div className="container celebrities-page">
         <header className="header">
-        <h1 style={{ marginTop: "4rem" }}>Celebridades</h1>       
+       
          </header>
         <div className="grid">
           {celebrities.map((celeb, index) => (
@@ -103,9 +71,8 @@ const CelebritiesPage = () => {
             </div>
           ))}
         </div>
-        {/* Eventos Section */}
-        <EventosSection />
       </div>
+      
     </ReactLenis>
   );
 };

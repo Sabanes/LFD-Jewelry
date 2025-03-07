@@ -72,7 +72,7 @@ const Navbar = () => {
         
         <div className={`nav-container ${menuOpen ? "open" : ""}`}>
           <div className="nav-links">
-            <a href="#Start" onClick={(e) => handleNavigation(e, "Start")}>
+            <a href="#Início" onClick={(e) => handleNavigation(e, "Início")}>
               <p>Início</p>
             </a>
             <a href="#Sobre-nos" onClick={(e) => handleNavigation(e, "Sobre-nos")}>
@@ -84,7 +84,7 @@ const Navbar = () => {
             <a href="/Celebridades">
               <p>Celebridades</p>
             </a>
-            <a href="/Celebridades/#Eventos">
+            <a href="/Eventos">
               <p>Eventos</p>
             </a>
   
