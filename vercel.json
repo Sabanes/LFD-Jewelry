@@ -1,0 +1,6 @@
+{
+    "rewrites": [
+      { "source": "/celebrities", "destination": "/celebrities/page.jsx" },
+      { "source": "/events", "destination": "/events/index.html" }
+    ]
+  }
