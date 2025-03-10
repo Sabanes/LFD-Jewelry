@@ -1,145 +1,260 @@
+/* components/Navbar.css */
 .navbar {
+  background: transparent;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  padding: 1.5rem 2rem;
-  z-index: 1000;
-  transition: transform 0.3s ease-in-out;
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(40px);
-  -webkit-backdrop-filter: blur(40px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  right: 0;
+  z-index: 999;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
 }
 
-.navbar--hidden {
-  transform: translateY(-100%);
-}
-
-.navbar--visible {
+.navbar.visible {
   transform: translateY(0);
 }
 
-.navbar-content {
+.navbar.hidden {
+  transform: translateY(-100%);
+}
+
+.navbar-container {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100%;
-}
-
-.nav-container {
-  display: flex;
-  align-items: center;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 3rem;
-}
-
-
-.nav-links a {
-  text-decoration: none;
-}
-
-.nav-links p {
-  font-family: "Nippo", sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
-  color: #000000;
-  margin: 0;
-  white-space: nowrap;
-  transition: color 0.2s ease;
-}
-
-
-.music-toggle-wrapper {
-  margin-left: 3rem;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.hamburger-menu {
-  display: none;
-  cursor: pointer;
-  z-index: 1001;
-}
-
-.hamburger-icon {
-  width: 24px;
-  height: 20px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 24px;
 }
 
-.hamburger-icon span {
-  display: block;
-  width: 100%;
-  height: 2px;
-  background-color: #000000;
+.navbar-logo {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin: 0 1rem;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
   transition: all 0.3s ease;
 }
 
-.hamburger-icon.open span:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
+.nav-link:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  visibility: hidden;
+  transition: all 0.3s ease;
 }
 
-.hamburger-icon.open span:nth-child(2) {
-  opacity: 0;
+.nav-link:hover {
+  color: #ffffff;
 }
 
-.hamburger-icon.open span:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
+.nav-link:hover:before {
+  visibility: visible;
+  width: 100%;
 }
 
-@media (max-width: 900px) {
+/* Mobile responsive styles */
+@media screen and (max-width: 960px) {
   .navbar {
-    padding: 1rem 1.5rem;
+    background: transparent;
   }
   
-  .hamburger-menu {
+  .menu-icon {
     display: block;
+    cursor: pointer;
+    position: relative;
+    width: 30px;
+    height: 22px;
   }
   
-  .navbar-content {
-    justify-content: space-between;
+  .menu-icon span {
+    background: #fff;
+    height: 3px;
+    width: 100%;
+    display: block;
+    position: absolute;
+    border-radius: 2px;
+    transition: all 0.3s ease;
   }
   
-  .nav-container {
+  .menu-icon span:nth-child(1) {
+    top: 0;
+  }
+  
+  .menu-icon span:nth-child(2) {
+    top: 9px;
+  }
+  
+  .menu-icon span:nth-child(3) {
+    top: 18px;
+  }
+  
+  .menu-icon.active span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 9px;
+  }
+  
+  .menu-icon.active span:nth-child(2) {
+    opacity: 0;
+    width: 0;
+  }
+  
+  .menu-icon.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 9px;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
     position: fixed;
     top: 0;
-    right: -100%;
-    width: 70%;
-    height: 100vh;
-    background-color: var(--background);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    flex-direction: column;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    background: #1a1a1a;
+    padding-top: 100px;
+  }
+
+  .nav-menu.active {
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+
+  .nav-item {
+    margin: 1.5rem 0;
+  }
+
+  .nav-link {
+    font-size: 1.5rem;
+  }
+}
+
+/* Basic styles for language switcher */
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-right: 20px; /* Adjust spacing as needed */
+}
+
+
+/* Add this to your Navbar.css file */
+
+.language-switcher {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.language-switcher button {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  padding: 5px 8px;
+  margin: 0 3px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.language-switcher button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.language-switcher button.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+}
+
+/* Make the language switcher responsive in mobile view */
+@media screen and (max-width: 960px) {
+  .language-switcher {
+    margin: 15px 0;
     justify-content: center;
-    align-items: flex-end;
-    padding-right: 2rem;
-    transition: right 0.3s ease;
+  }
+  
+  .language-switcher button {
+    padding: 8px 15px;
+    margin: 0 5px;
+  }
+}
+
+/* Example scrolled class if you’re changing navbar background on scroll */
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+/* Add these styles to your Navbar.css file */
+
+/* Add background when scrolled down on larger screens */
+
+
+/* Ensure the navbar stays on top even when menu is active */
+.navbar {
+  z-index: 1000;
+}
+
+/* Full screen overlay styling */
+@media screen and (max-width: 960px) {
+  .navbar {
     z-index: 1000;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
   }
   
-  .nav-container.open {
-    right: 0;
+  /* Ensure the menu icon stays visible over the overlay */
+  .menu-icon {
+    z-index: 1001;
+    position: relative;
   }
   
-  .nav-links {
-    flex-direction: column;
-    align-items: flex-end;
-    text-align: right;
-    margin-bottom: 1.5rem;
-    gap: 1.5rem;
+  /* Logo should also stay on top */
+  .navbar-logo {
+    z-index: 1001;
+    position: relative;
   }
-  
-  .music-toggle-wrapper {
-    margin-left: 0;
-    margin-top: 1.5rem;
+  .nav-link {
+    font-size: 2rem;
+    line-height: 10px;
   }
 }

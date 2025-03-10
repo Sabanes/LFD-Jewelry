@@ -1,8 +1,8 @@
-import { Suspense } from "react";
-import ProgressBar from "@/components/ProgressBar/ProgressBar";
-import Navbar from "@/components/Navbar/Navbar";
 
+
+import Navbar from "../components/Navbar/Navbar";
 import "./globals.css";
+import { LanguageProvider } from "./i18n/languageContext";
 
 export const metadata = {
   title: "LFD Jóias - Luxury Fancy Design",
@@ -60,11 +60,10 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <Suspense>
-          <ProgressBar />
-        </Suspense>
+      <LanguageProvider>
         <Navbar />
         {children}
+      </LanguageProvider>
       </body>
     </html>
   );

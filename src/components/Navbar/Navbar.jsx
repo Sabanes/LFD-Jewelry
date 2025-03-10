@@ -1,130 +1,123 @@
 "use client";
-import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
-import { usePathname, useRouter } from "next/navigation";
-import dynamic from "next/dynamic";
-import "./Navbar.css";
-
-const MusicToggle = dynamic(() => import("../MusicToggle/MusicToggle"), {
-  ssr: false,
-});
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import './Navbar.css';
+import { useLanguage } from '../../app/i18n/languageContext';
 
 const Navbar = () => {
-  const [isVisible, setIsVisible] = useState(true);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [lenisReady, setLenisReady] = useState(false);
-  const prevScrollPos = useRef(
-    typeof window !== "undefined" ? window.pageYOffset : 0
-  );
-  const pathname = usePathname();
-  const router = useRouter();
-  const isHomePage = pathname === "/";
+  const [isOpen, setIsOpen] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false);
   
+  // Use a try-catch to handle potential errors
+  let languageContext = { dictionary: {nav: {}}, locale: 'pt', changeLanguage: () => {} };
+  try {
+    languageContext = useLanguage();
+  } catch (error) {
+    console.error("Error using language context:", error);
+  }
+  
+  const { dictionary, locale, changeLanguage } = languageContext;
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
-      if (prevScrollPos.current > currentScrollPos) {
-        setIsVisible(true);
+      const isVisible = prevScrollPos > currentScrollPos || currentScrollPos < 10;
+      if (currentScrollPos > 50) {
+        setIsScrolled(true);
       } else {
-        setIsVisible(false);
+        setIsScrolled(false);
       }
-      prevScrollPos.current = currentScrollPos;
+      setPrevScrollPos(currentScrollPos);
+      setVisible(isVisible);
     };
-    
-    window.addEventListener("scroll", handleScroll);
-    
-    // Check if Lenis is available and set state when it's ready
-    const checkLenis = () => {
-      if (window.lenis) {
-        setLenisReady(true);
-      } else {
-        setTimeout(checkLenis, 100);
-      }
-    };
-    
-    checkLenis();
-    
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-  
-  // When navigating from another page to homepage, handle hash navigation
-  useEffect(() => {
-    if (isHomePage && lenisReady) {
-      const hash = window.location.hash.substring(1);
-      if (hash) {
-        setTimeout(() => {
-          const element = document.getElementById(hash);
-          if (element && window.lenis) {
-            window.lenis.scrollTo(element, {
-              offset: 0,
-              immediate: false,
-              duration: 1.5,
-            });
-          }
-        }, 300); // Small delay to ensure everything is loaded
-      }
-    }
-  }, [isHomePage, lenisReady]);
-
-  const handleNavigation = (event, sectionId) => {
-    event.preventDefault();
-    
-    if (isHomePage) {
-      if (window.lenis) {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          window.lenis.scrollTo(element, {
-            offset: 0,
-            immediate: false,
-            duration: 1.5,
-          });
-        }
-      }
-    } else {
-      router.push(`/#${sectionId}`);
-    }
-    
-    setMenuOpen(false);
-  };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [prevScrollPos]);
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+    setIsOpen(!isOpen);
+    if (!isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+    document.body.style.overflow = 'auto';
+  };
+
+  // Make sure dictionary.nav exists before trying to access properties
+  const nav = dictionary?.nav || {
+    home: "Início",
+    about: "Sobre Nós",
+    brands: "Marcas",
+    celebrities: "Celebridades",
+    events: "Eventos",
+    contacts: "Contactos"
   };
 
   return (
-    <div className={`navbar ${isVisible ? "navbar--visible" : "navbar--hidden"}`}>
-      <div className="navbar-content">
-        <div className="hamburger-menu" onClick={toggleMenu}>
-          <div className={`hamburger-icon ${menuOpen ? "open" : ""}`}>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+    <nav className={`navbar ${visible ? 'visible' : 'hidden'} ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="navbar-container">
+        <Link href="/" className="navbar-logo">
+        </Link>
+        <div className={`menu-icon ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-        <div className={`nav-container ${menuOpen ? "open" : ""}`}>
-          <div className="nav-links">
-            <a href="#Início" onClick={(e) => handleNavigation(e, "Início")}>
-              <p>Início</p>
-            </a>
-            <a href="#Sobre-nos" onClick={(e) => handleNavigation(e, "Sobre-nos")}>
-              <p>Sobre nos</p>
-            </a>
-            <a href="#Marcas" onClick={(e) => handleNavigation(e, "Marcas")}>
-              <p>Marcas</p>
-            </a>
-            <a href="/Celebridades">
-              <p>Celebridades</p>
-            </a>
-            <a href="/Eventos">
-              <p>Eventos</p>
-            </a>
-          </div>
-          <div className="music-toggle-wrapper">
-            <MusicToggle />
-          </div>
-        </div>
+        <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
+          <li className="nav-item">
+            <Link href="/" className="nav-link" onClick={closeMenu}>
+              {nav.home}
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link href="/sobre-nos" className="nav-link" onClick={closeMenu}>
+              {nav.about}
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link href="/marcas" className="nav-link" onClick={closeMenu}>
+              {nav.brands}
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link href="/celebridades" className="nav-link" onClick={closeMenu}>
+              {nav.celebrities}
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link href="/eventos" className="nav-link" onClick={closeMenu}>
+              {nav.events}
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link href="/contactos" className="nav-link" onClick={closeMenu}>
+              {nav.contacts}
+            </Link>
+          </li>
+          <li className="nav-item language-switcher">
+            <button 
+              onClick={() => changeLanguage('pt')} 
+              className={locale === 'pt' ? 'active' : ''}
+            >
+              PT
+            </button>
+            <button 
+              onClick={() => changeLanguage('en')} 
+              className={locale === 'en' ? 'active' : ''}
+            >
+              EN
+            </button>
+          </li>
+        </ul>
       </div>
-    </div>
+    </nav>
   );
 };
 
