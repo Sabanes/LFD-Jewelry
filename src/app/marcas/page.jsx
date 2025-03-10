@@ -2,128 +2,163 @@
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
-import { carouselItems } from "./carouselItems";
+import { carouselItems } from "./carouselItems"; // Update path as needed
 
-import "../home.css";
+import "../home.css"; // Make sure the path is correct
 
-gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
-export default function marcas() {
-  const container = useRef();
+export default function Marcas() {
+  const container = useRef(null);
+  const lenis = useLenis(); // If you're actually using ReactLenis
 
+  // (Optional) Connect Lenis + ScrollTrigger so pinned sections track Lenis's smooth scroll.
+  useEffect(() => {
+    if (!lenis) return;
 
-  // handles carousel slide transitions with clip-path animations
-  useGSAP(
-    () => {
-      if (typeof window === "undefined") return;
+    // Tell ScrollTrigger to use Lenis's scroll instead of window scroll
+    ScrollTrigger.scrollerProxy(document.body, {
+      scrollTop(value) {
+        return arguments.length
+          ? lenis.scrollTo(value, { immediate: true })
+          : lenis.scroll;
+      },
+      getBoundingClientRect() {
+        return {
+          top: 0,
+          left: 0,
+          width: window.innerWidth,
+          height: window.innerHeight,
+        };
+      },
+    });
 
-      const projects = gsap.utils.toArray(".project");
+    // Whenever Lenis scrolls, tell ScrollTrigger to update
+    const handleScroll = () => ScrollTrigger.update();
+    lenis.on("scroll", handleScroll);
 
-      ScrollTrigger.create({
-        trigger: ".carousel",
-        start: "top top",
-        end: `+=${window.innerHeight * (projects.length - 1)}`,
-        pin: true,
-        pinSpacing: true,
-        scrub: 1,
-        invalidateOnRefresh: true,
-        onUpdate: (self) => {
-          const progress = self.progress * (projects.length - 1);
-          const currentSlide = Math.floor(progress);
-          const slideProgress = progress - currentSlide;
+    return () => {
+      lenis.off("scroll", handleScroll);
+    };
+  }, [lenis]);
 
-          if (currentSlide < projects.length - 1) {
-            gsap.set(projects[currentSlide], {
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    // Kill any existing triggers (important if this page is unmounted/remounted)
+    ScrollTrigger.getAll().forEach((t) => t.kill());
+
+    const projects = gsap.utils.toArray(".project");
+
+    // Create the pinned ScrollTrigger
+    const trigger = ScrollTrigger.create({
+      trigger: ".carousel",
+      start: "top top",
+      end: `+=${window.innerHeight * (projects.length - 1)}`,
+      pin: true,
+      pinSpacing: true,
+      scrub: 1,
+      invalidateOnRefresh: true,
+      onUpdate: (self) => {
+        const progress = self.progress * (projects.length - 1);
+        const currentSlide = Math.floor(progress);
+        const slideProgress = progress - currentSlide;
+
+        if (currentSlide < projects.length - 1) {
+          gsap.set(projects[currentSlide], {
+            clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
+          });
+
+          const nextSlideProgress = gsap.utils.interpolate(
+            "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+            "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
+            slideProgress
+          );
+
+          gsap.set(projects[currentSlide + 1], {
+            clipPath: nextSlideProgress,
+          });
+        }
+
+        // Ensure previous slides are fully revealed; future slides are fully hidden
+        projects.forEach((project, index) => {
+          if (index < currentSlide) {
+            gsap.set(project, {
               clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
             });
-
-            const nextSlideProgress = gsap.utils.interpolate(
-              "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-              "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-              slideProgress
-            );
-
-            gsap.set(projects[currentSlide + 1], {
-              clipPath: nextSlideProgress,
+          } else if (index > currentSlide + 1) {
+            gsap.set(project, {
+              clipPath:
+                "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
             });
           }
+        });
+      },
+    });
 
-          projects.forEach((project, index) => {
-            if (index < currentSlide) {
-              gsap.set(project, {
-                clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-              });
-            } else if (index > currentSlide + 1) {
-              gsap.set(project, {
-                clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-              });
-            }
-          });
-        },
-      });
+    // Ensure the first slide is visible immediately
+    gsap.set(projects[0], {
+      clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
+    });
 
-      gsap.set(projects[0], {
-        clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-      });
+    // Force a refresh once everything is in place
+    ScrollTrigger.refresh();
 
-      return () => {
-        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-      };
-    },
-    { scope: container }
-  );
+    // Cleanup on unmount
+    return () => {
+      trigger.kill();
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
+  }, []);
 
   return (
-    <>
-      <ReactLenis
-        root
-        options={{
-          duration: 1.5,
-          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-          direction: "vertical",
-          gestureDirection: "vertical",
-          smooth: true,
-          smoothTouch: false,
-          touchMultiplier: 2,
-        }}
-      >
-        <div className="app" ref={container}>
-          <section className="carousel" id="Marcas">
-            {carouselItems.map((item) => (
-              <div
-                key={item.id}
-                id={`project-${item.id}`}
-                className="project"
-                style={{
-                  clipPath:
-                    item.id === "01"
-                      ? "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)"
-                      : "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-                }}
-              >
-                <div className="project-bg">
-                  <img src={item.bg} alt="" />
-                  <div className="hero-img-overlay"></div>
-                  <div className="hero-img-gradient"></div>
-                </div>
-
-                <div className="project-header">
-                  <div className="project-id">
-                    <a href={item.url}><span className="project-id-conf">{item.id}</span></a>
-                  </div>
-                  <div className="project-whitespace"></div>
-                </div>
-               
+    <ReactLenis
+      root
+      options={{
+        duration: 1.5,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        direction: "vertical",
+        gestureDirection: "vertical",
+        smooth: true,
+        smoothTouch: false,
+        touchMultiplier: 2,
+      }}
+    >
+      <div className="app" ref={container}>
+        <section className="carousel" id="Marcas">
+          {carouselItems.map((item) => (
+            <div
+              key={item.id}
+              id={`project-${item.id}`}
+              className="project"
+              // Default clipPath so only the first one is "fully shown"
+              style={{
+                clipPath:
+                  item.id === "01"
+                    ? "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)"
+                    : "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+              }}
+            >
+              <div className="project-bg">
+                <img src={item.bg} alt="" />
+                <div className="hero-img-overlay"></div>
+                <div className="hero-img-gradient"></div>
               </div>
-            ))}
-          </section>
-
-        </div>
-      </ReactLenis>
-    </>
+    
+              <div className="project-header">
+                <div className="project-id">
+                  <a href={item.url}>
+                    <span className="project-id-conf">{item.id}</span>
+                  </a>
+                </div>
+                <div className="project-whitespace"></div>
+              </div>
+            </div>
+          ))}
+        </section>
+      </div>
+    </ReactLenis>
   );
 }

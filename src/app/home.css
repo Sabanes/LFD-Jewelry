@@ -131,12 +131,10 @@
   position: relative;
   width: 100dvw;
   height: 100lvh !important;
-  overflow: hidden;
   z-index: 1;
   }
 
 .project {
-  overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
@@ -159,7 +157,7 @@
   width: 25%;
   aspect-ratio: 1;
   border-radius: 0.5rem;
-  overflow: hidden;
+  overflow-x: hidden;
 } 
 
 .project-header {
