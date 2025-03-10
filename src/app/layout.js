@@ -60,8 +60,10 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
+      <LanguageProvider>
         <Navbar />
         {children}
+      </LanguageProvider>
       </body>
     </html>
   );

@@ -87,12 +87,12 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link href="/celebridades" className="nav-link" onClick={closeMenu}>
+            <Link href="/celebridade" className="nav-link" onClick={closeMenu}>
               {nav.celebrities}
             </Link>
           </li>
           <li className="nav-item">
-            <Link href="/eventos" className="nav-link" onClick={closeMenu}>
+            <Link href="/evento" className="nav-link" onClick={closeMenu}>
               {nav.events}
             </Link>
           </li>
