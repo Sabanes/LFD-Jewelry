@@ -155,13 +155,34 @@ textarea#message {
 
 
 .btnsend {
-  text-decoration: underline;
-  color: white; /* White text on white background can be hard to see. Adjust as needed. */
+  display: inline-block;
+  background-color: var(--accent, #747474);
+  color: var(--foreground, #fff);
   text-transform: uppercase;
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(1rem, 2vw, 1.5rem);
   font-weight: 600;
-  letter-spacing: -0.05em;
-  background-color: transparent;
+  letter-spacing: 0.05em;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btnsend:hover {
+  background-color: var(--background, #000);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btnsend:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.btnsend:focus {
+  outline: 2px solid var(--accent, #747474);
+  outline-offset: 2px;
 }
 
 /* Breakpoints */
