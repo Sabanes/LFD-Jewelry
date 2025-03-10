@@ -7,6 +7,7 @@ const videoLinks = [
     "https://res.cloudinary.com/dcraqvlmb/video/upload/f_auto:video,q_auto/v1/LFD/vw0n05bcal8ynmp9d8gw",
     "https://res.cloudinary.com/dcraqvlmb/video/upload/f_auto:video,q_auto/v1/LFD/d28adjbn6wt0uyil93ii",
     "https://res.cloudinary.com/dcraqvlmb/video/upload/f_auto:video,q_auto/v1/LFD/vh3gpn5usysswr9rul1k",
+    "https://res.cloudinary.com/dcraqvlmb/video/upload/f_auto:video,q_auto/kljyshqcw96m4ob6mfmx",
   ];
 
   const Eventos = () => {
