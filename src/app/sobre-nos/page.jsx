@@ -9,7 +9,6 @@ const AboutUs = () => {
     <section className="about" id="Sobre-nos">
       <div className="about-overlay">
         <div className="about-content">
-          <h3 className="about-primary">{dictionary.about.title}</h3>
           <p className="about-text">{dictionary.about.text}</p>
         </div>
       </div>
