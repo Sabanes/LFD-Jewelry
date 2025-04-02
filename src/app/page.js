@@ -157,9 +157,10 @@ export default function Home() {
             {/* Moved the hero-icon outside of the container for better positioning */}
             <div className="hero-icon">
               <img
-                src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/uunf93lyr4nwu3lfeieh"
+                src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/ue5era1m9rnyqtd3vfql"
                 alt="LFD Group logo"
               />
+
             </div>
 
           </section>

@@ -25,6 +25,12 @@ export const carouselItems = [
     url: "https://dorica.com/",
   },
   {
+    id: "Borsari Gioielli",
+    title: "Tradição e inovação em joias.",
+    bg: "https://res.cloudinary.com/dcraqvlmb/image/upload/c_crop,g_south_west,h_0.95/LFD/inv32sa06ra0yoqs3v0p",
+    url: "https://www.borsarigioielli.com/en/",
+  },
+  {
     id: "Orchid",
     title: "Elegância e sofisticação intemporais.",
     bg: "https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/bjoo1kg7xqx5mrmur2ww",
