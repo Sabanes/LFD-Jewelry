@@ -34,6 +34,12 @@ const celebrities = [
   { name: "WINNIE HARLOW", image: "https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/jtptyt3s7vavfvqhzkch" },
   { name: "OPRAH", image: "https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/cqg9oj6xytneycexvqy9" },
   { name: "TRACE ELLIS ROSS", image: "https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/k5jhuoc3c6dhhahrschc" },
+  { name: "Cuca Roseta", image: "https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/kugbvcisvrecbr58bos0" },
+  { name: "Iva Lamarão", image: "https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/nonpzrfas9t4esjzqdjc" },
+  { name: "Cristina Ferreira", image: "https://res.cloudinary.com/dcraqvlmb/image/upload/c_crop,g_north,h_0.80,w_1.00/q_auto:eco/LFD/havjbbcvsq51fvjtz56f" },
+  { name: "Sonia Araujo", image: "https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/emahlstasxkwwmxcvpfv" },
+  { name: "Fátima Lopes", image: "https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/fehmd4u7rhqwkzefguue" },
+  { name: "Iva domingues", image: "https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/hncriovjw4quwsijbvsz" },
 ];
 
 const CelebritiesPage = () => {
