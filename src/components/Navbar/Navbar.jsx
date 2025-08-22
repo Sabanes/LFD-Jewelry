@@ -89,8 +89,13 @@ const Navbar = () => {
             </a>
           </li>
           <li className="nav-item">
-            <a href="/marcas" className="nav-link" onClick={(e) => handleNavigation('/marcas', e)}>
-              {nav.brands}
+            <a href="/joias" className="nav-link" onClick={(e) => handleNavigation('/joias', e)}>
+              {nav.jewelry}
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="/relogios" className="nav-link" onClick={(e) => handleNavigation('/relogios', e)}>
+              {nav.watches}
             </a>
           </li>
           <li className="nav-item">

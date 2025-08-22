@@ -3,7 +3,8 @@ const dictionaries = {
       nav: {
         home: "Home",
         about: "About Us",
-        brands: "Brands",
+        jewelry: "Jewelry",
+        watches: "Watches",
         celebrities: "Celebrities",
         events: "Events",
         contacts: "Contacts"
@@ -26,7 +27,8 @@ const dictionaries = {
       nav: {
         home: "Início",
         about: "Sobre Nós",
-        brands: "Marcas",
+        jewelry: "Joalheria",
+        watches: "Relojoaria",
         celebrities: "Celebridades",
         events: "Eventos",
         contacts: "Contactos"
