@@ -1,6 +1,7 @@
 
 
 import Navbar from "../components/Navbar/Navbar";
+import PageTransition from "../components/PageTransition/PageTransition";
 import "./globals.css";
 import { LanguageProvider } from "./i18n/languageContext";
 
@@ -61,8 +62,10 @@ export default function RootLayout({ children }) {
       </head>
       <body>
       <LanguageProvider>
-        <Navbar />
-        {children}
+        <PageTransition>
+          <Navbar />
+          {children}
+        </PageTransition>
       </LanguageProvider>
       </body>
     </html>

@@ -1,7 +1,7 @@
 /* components/Navbar.css */
 .navbar {
   background: transparent;
-  height: 80px;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,7 +27,7 @@
   align-items: center;
   width: 100%;
   max-width: 1200px;
-  padding: 0 24px;
+  padding: 0 20px;
 }
 
 .navbar-logo {
@@ -53,15 +53,15 @@
 }
 
 .nav-item {
-  margin: 0 1rem;
+  margin: 0 0.8rem;
 }
 
 .nav-link {
   color: #fff;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 500;
-  padding: 0.5rem 0;
+  padding: 0.4rem 0;
   position: relative;
   transition: all 0.3s ease;
 }
@@ -97,13 +97,13 @@
     display: block;
     cursor: pointer;
     position: relative;
-    width: 30px;
-    height: 22px;
+    width: 24px;
+    height: 18px;
   }
   
   .menu-icon span {
     background: #fff;
-    height: 3px;
+    height: 2px;
     width: 100%;
     display: block;
     position: absolute;
@@ -116,16 +116,16 @@
   }
   
   .menu-icon span:nth-child(2) {
-    top: 9px;
+    top: 8px;
   }
   
   .menu-icon span:nth-child(3) {
-    top: 18px;
+    top: 16px;
   }
   
   .menu-icon.active span:nth-child(1) {
     transform: rotate(45deg);
-    top: 9px;
+    top: 8px;
   }
   
   .menu-icon.active span:nth-child(2) {
@@ -135,7 +135,7 @@
   
   .menu-icon.active span:nth-child(3) {
     transform: rotate(-45deg);
-    top: 9px;
+    top: 8px;
   }
 
   .nav-menu {
@@ -148,8 +148,9 @@
     left: -100%;
     opacity: 1;
     transition: all 0.5s ease;
-    background: #1a1a1a;
-    padding-top: 100px;
+    background: rgba(42, 42, 42, 0.95);
+    backdrop-filter: blur(10px);
+    padding-top: 80px;
   }
 
   .nav-menu.active {
@@ -160,11 +161,12 @@
   }
 
   .nav-item {
-    margin: 1.5rem 0;
+    margin: 1rem 0;
   }
 
   .nav-link {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    color: #ffffff;
   }
 }
 
@@ -212,13 +214,26 @@
 /* Make the language switcher responsive in mobile view */
 @media screen and (max-width: 960px) {
   .language-switcher {
-    margin: 15px 0;
+    margin: 10px 0;
     justify-content: center;
   }
   
   .language-switcher button {
-    padding: 8px 15px;
-    margin: 0 5px;
+    padding: 6px 12px;
+    margin: 0 4px;
+    font-size: 12px;
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  .language-switcher button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .language-switcher button.active {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.8);
   }
 }
 
@@ -252,9 +267,5 @@
   .navbar-logo {
     z-index: 1001;
     position: relative;
-  }
-  .nav-link {
-    font-size: 2rem;
-    line-height: 10px;
   }
 }

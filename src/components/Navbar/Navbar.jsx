@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 import './Navbar.css';
 import { useLanguage } from '../../app/i18n/languageContext';
+import { usePageTransition } from '../../hooks/usePageTransition';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,6 +19,7 @@ const Navbar = () => {
   }
   
   const { dictionary, locale, changeLanguage } = languageContext;
+  const { navigateWithTransition } = usePageTransition();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,6 +51,12 @@ const Navbar = () => {
     document.body.style.overflow = 'auto';
   };
 
+  const handleNavigation = (href, e) => {
+    e.preventDefault();
+    closeMenu();
+    navigateWithTransition(href);
+  };
+
   // Make sure dictionary.nav exists before trying to access properties
   const nav = dictionary?.nav || {
     home: "Início",
@@ -63,8 +70,8 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${visible ? 'visible' : 'hidden'} ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
-        <Link href="/" className="navbar-logo">
-        </Link>
+        <a href="/" className="navbar-logo" onClick={(e) => handleNavigation('/', e)}>
+        </a>
         <div className={`menu-icon ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
           <span></span>
           <span></span>
@@ -72,34 +79,34 @@ const Navbar = () => {
         </div>
         <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
           <li className="nav-item">
-            <Link href="/" className="nav-link" onClick={closeMenu}>
+            <a href="/" className="nav-link" onClick={(e) => handleNavigation('/', e)}>
               {nav.home}
-            </Link>
+            </a>
           </li>
           <li className="nav-item">
-            <Link href="/sobre-nos" className="nav-link" onClick={closeMenu}>
+            <a href="/sobre-nos" className="nav-link" onClick={(e) => handleNavigation('/sobre-nos', e)}>
               {nav.about}
-            </Link>
+            </a>
           </li>
           <li className="nav-item">
-            <Link href="/marcas" className="nav-link" onClick={closeMenu}>
+            <a href="/marcas" className="nav-link" onClick={(e) => handleNavigation('/marcas', e)}>
               {nav.brands}
-            </Link>
+            </a>
           </li>
           <li className="nav-item">
-            <Link href="/celebridade" className="nav-link" onClick={closeMenu}>
+            <a href="/celebridade" className="nav-link" onClick={(e) => handleNavigation('/celebridade', e)}>
               {nav.celebrities}
-            </Link>
+            </a>
           </li>
           <li className="nav-item">
-            <Link href="/evento" className="nav-link" onClick={closeMenu}>
+            <a href="/evento" className="nav-link" onClick={(e) => handleNavigation('/evento', e)}>
               {nav.events}
-            </Link>
+            </a>
           </li>
           <li className="nav-item">
-            <Link href="/contactos" className="nav-link" onClick={closeMenu}>
+            <a href="/contactos" className="nav-link" onClick={(e) => handleNavigation('/contactos', e)}>
               {nav.contacts}
-            </Link>
+            </a>
           </li>
           <li className="nav-item language-switcher">
             <button 

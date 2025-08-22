@@ -1,0 +1,148 @@
+/* PageTransition.css */
+
+.page-transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.page-transition-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.transition-logo {
+  /* No animation - removed bounce effect */
+}
+
+.transition-logo img {
+  width: 120px;
+  height: auto;
+  filter: brightness(0) invert(1);
+  transition: all 0.3s ease;
+}
+
+.transition-loader {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.loader-bar {
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.loader-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #ffffff 0%, #e0e0e0 50%, #ffffff 100%);
+  border-radius: 10px;
+  animation: loadingProgress 0.8s ease-out;
+  position: relative;
+}
+
+.loader-progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.6) 50%, transparent 100%);
+  animation: shimmer 1.5s infinite;
+}
+
+.page-content {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.page-content.transitioning {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes loadingProgress {
+  0% {
+    width: 0%;
+  }
+  70% {
+    width: 85%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .transition-logo img {
+    width: 100px;
+  }
+  
+  .transition-loader {
+    width: 160px;
+  }
+  
+  .page-transition-content {
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .transition-logo img {
+    width: 80px;
+  }
+  
+  .transition-loader {
+    width: 140px;
+  }
+  
+  .page-transition-content {
+    gap: 25px;
+  }
+}
