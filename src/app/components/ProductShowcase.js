@@ -49,13 +49,6 @@ const brandData = [
     url: "https://theorchidjewelry.com/",
   },
   {
-    id: "Daniel Wellington",
-    logo: "/LogosLFD/wellington.png",
-    bg: "https://res.cloudinary.com/dcraqvlmb/image/upload/v1755895320/Screenshot_2025-08-23_at_00-38-58_Daniel_Wellington_danielwellington_Instagram_photos_and_videos_c3ohpc.png",
-    description: "Minimalismo escandinavo redefinido. Daniel Wellington revolucionou a relojoaria com designs clean e elegantes, criando timepieces que combinam simplicidade sofisticada com qualidade premium.",
-    url: "https://www.danielwellington.com/",
-  },
-  {
     id: "Favre Leuba",
     logo: "/LogosLFD/favreleubalogo.jpg",
     bg: "https://res.cloudinary.com/dcraqvlmb/image/upload/v1755895320/Screenshot_2025-08-23_at_00-40-33_Instagram_dka3yr.png",
@@ -68,6 +61,13 @@ const brandData = [
     bg: "https://res.cloudinary.com/dcraqvlmb/image/upload/v1755895961/Screenshot_2025-08-23_at_00-50-13_Watch_this_story_by_Eberhard_Co._-_Official_Page_on_Instagram_before_it_disappears_1_qyq9vb.jpg",
     description: "Luxo atemporal com herança italiana. Eberhard & Co. representa a excelência da relojoaria italiana desde 1887, criando timepieces que combinam tradição artesanal com inovação tecnológica.",
     url: "https://www.eberhard-co-watches.ch/en/",
+  },
+  {
+    id: "Daniel Wellington",
+    logo: "/LogosLFD/wellington.png",
+    bg: "https://res.cloudinary.com/dcraqvlmb/image/upload/v1755895320/Screenshot_2025-08-23_at_00-38-58_Daniel_Wellington_danielwellington_Instagram_photos_and_videos_c3ohpc.png",
+    description: "Minimalismo escandinavo redefinido. Daniel Wellington revolucionou a relojoaria com designs clean e elegantes, criando timepieces que combinam simplicidade sofisticada com qualidade premium.",
+    url: "https://www.danielwellington.com/",
   }
 ];
 

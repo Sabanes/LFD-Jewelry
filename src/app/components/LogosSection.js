@@ -37,11 +37,6 @@ const logos = [
     alt: "Orchid logo"
   },
   {
-    name: "Daniel Wellington",
-    src: "/LogosLFD/wellington.png",
-    alt: "Daniel Wellington logo"
-  },
-  {
     name: "Favre Leuba",
     src: "/LogosLFD/favreleubalogo.jpg",
     alt: "Favre Leuba logo"
@@ -50,6 +45,11 @@ const logos = [
     name: "Eberhard",
     src: "/LogosLFD/eberhardlogoblue.png",
     alt: "Eberhard logo"
+  },
+  {
+    name: "Daniel Wellington",
+    src: "/LogosLFD/wellington.png",
+    alt: "Daniel Wellington logo"
   }
 ];
 
