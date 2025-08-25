@@ -20,7 +20,13 @@ const dictionaries = {
       name: "Name",
       email: "Email",
       message: "Message",
-      submit: "Submit"
+      submit: "Submit",
+      formTitle: "Send us a message",
+      formDescription: "We would be happy to answer your questions about our exclusive brands.",
+      phone: "Phone"
+    },
+    brands: {
+      title: "Brands We Represent"
     }
   },
   pt: {
@@ -44,7 +50,13 @@ const dictionaries = {
       name: "Nome",
       email: "Email",
       message: "Mensagem",
-      submit: "Enviar"
+      submit: "Enviar",
+      formTitle: "Envie-nos uma mensagem",
+      formDescription: "Teremos todo o prazer em responder às suas questões sobre as nossas marcas exclusivas.",
+      phone: "Telefone"
+    },
+    brands: {
+      title: "Marcas que Representamos"
     }
   }
 };

@@ -7,8 +7,12 @@ import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
 import { carouselItems } from "./marcas/carouselItems";
+import LogosSection from "./components/LogosSection";
+import ProductShowcase from "./components/ProductShowcase";
 
 import "./home.css";
+import "./components/LogosSection.css";
+import "./components/ProductShowcase.css";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -164,6 +168,10 @@ export default function Home() {
             </div>
 
           </section>
+          
+          <LogosSection />
+          
+          <ProductShowcase />
         </div>
       </ReactLenis>
     </>
