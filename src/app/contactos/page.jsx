@@ -29,20 +29,12 @@ export default function ContactPage() {
 
   return (
     <div className="contact-page">
-      {/* Hero Section with Background Image */}
+      {/* Hero Section with Dark Background */}
       <section className="contact-hero">
-        <div className="hero-image">
-          <img 
-            src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/zbfdqel498wdmcxx2wqm" 
-            alt="LFD Group luxury jewelry workspace"
-          />
-          <div className="hero-overlay"></div>
-        </div>
         <div className="hero-content">
           <h1 className="contact-title">
             {dictionary.contact?.getInTouch || "Contactos"}
           </h1>
-
         </div>
       </section>
 

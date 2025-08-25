@@ -51,7 +51,7 @@ const brandData = [
   {
     id: "Favre Leuba",
     logo: "/LogosLFD/favreleubalogo.jpg",
-    bg: "https://res.cloudinary.com/dcraqvlmb/image/upload/v1755895320/Screenshot_2025-08-23_at_00-40-33_Instagram_dka3yr.png",
+    bg: "https://res.cloudinary.com/dcraqvlmb/image/upload/v1756144482/6b31765c-c427-4a87-9e55-20f44c301985_1_ywvvpa.jpg",
     description: "Tradição e inovação em relojoaria suíça. Favre Leuba, uma das mais antigas manufacturas de relógios do mundo, combina precisão técnica excepcional com design inovador há mais de 280 anos.",
     url: "https://www.favreleuba.com/",
   },

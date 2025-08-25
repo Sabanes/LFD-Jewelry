@@ -44,7 +44,7 @@ export const carouselItems = [
   {
     id: "FLAVRE LEUBA",
     title: "Tradição e inovação em joias.",
-    bg: "https://res.cloudinary.com/dcraqvlmb/image/upload/v1755895320/Screenshot_2025-08-23_at_00-40-33_Instagram_dka3yr.png",
+    bg: "https://res.cloudinary.com/dcraqvlmb/image/upload/v1756144482/6b31765c-c427-4a87-9e55-20f44c301985_1_ywvvpa.jpg",
     url: "https://www.favreleuba.com/",
   },
   {
