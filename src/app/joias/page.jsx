@@ -14,6 +14,15 @@ export default function Marcas() {
   const container = useRef(null);
   const lenis = useLenis(); // If you're actually using ReactLenis
 
+  // Auto reload page once when visited
+  useEffect(() => {
+    const hasReloaded = sessionStorage.getItem('jewelry-page-reloaded');
+    if (!hasReloaded) {
+      sessionStorage.setItem('jewelry-page-reloaded', 'true');
+      window.location.reload();
+    }
+  }, []);
+
   // (Optional) Connect Lenis + ScrollTrigger so pinned sections track Lenis's smooth scroll.
   useEffect(() => {
     if (!lenis) return;
@@ -50,65 +59,85 @@ export default function Marcas() {
     // Kill any existing triggers (important if this page is unmounted/remounted)
     ScrollTrigger.getAll().forEach((t) => t.kill());
 
-    const projects = gsap.utils.toArray(".project");
+    const initCarousel = () => {
+      const projects = gsap.utils.toArray(".project");
+      if (projects.length === 0) {
+        // If projects not found, retry after a short delay
+        setTimeout(initCarousel, 100);
+        return null;
+      }
 
-    // Create the pinned ScrollTrigger
-    const trigger = ScrollTrigger.create({
-      trigger: ".carousel",
-      start: "top top",
-      end: `+=${window.innerHeight * (projects.length - 1)}`,
-      pin: true,
-      pinSpacing: true,
-      scrub: 1,
-      invalidateOnRefresh: true,
-      onUpdate: (self) => {
-        const progress = self.progress * (projects.length - 1);
-        const currentSlide = Math.floor(progress);
-        const slideProgress = progress - currentSlide;
+      // Create the pinned ScrollTrigger
+      const trigger = ScrollTrigger.create({
+        trigger: ".carousel",
+        start: "top top",
+        end: `+=${window.innerHeight * (projects.length - 1)}`,
+        pin: true,
+        pinSpacing: true,
+        scrub: 1,
+        invalidateOnRefresh: true,
+        onUpdate: (self) => {
+          const progress = self.progress * (projects.length - 1);
+          const currentSlide = Math.floor(progress);
+          const slideProgress = progress - currentSlide;
 
-        if (currentSlide < projects.length - 1) {
-          gsap.set(projects[currentSlide], {
-            clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-          });
-
-          const nextSlideProgress = gsap.utils.interpolate(
-            "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-            "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-            slideProgress
-          );
-
-          gsap.set(projects[currentSlide + 1], {
-            clipPath: nextSlideProgress,
-          });
-        }
-
-        // Ensure previous slides are fully revealed; future slides are fully hidden
-        projects.forEach((project, index) => {
-          if (index < currentSlide) {
-            gsap.set(project, {
+          if (currentSlide < projects.length - 1) {
+            gsap.set(projects[currentSlide], {
               clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
             });
-          } else if (index > currentSlide + 1) {
-            gsap.set(project, {
-              clipPath:
-                "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+
+            const nextSlideProgress = gsap.utils.interpolate(
+              "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+              "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
+              slideProgress
+            );
+
+            gsap.set(projects[currentSlide + 1], {
+              clipPath: nextSlideProgress,
             });
           }
-        });
-      },
-    });
 
-    // Ensure the first slide is visible immediately
-    gsap.set(projects[0], {
-      clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-    });
+          // Ensure previous slides are fully revealed; future slides are fully hidden
+          projects.forEach((project, index) => {
+            if (index < currentSlide) {
+              gsap.set(project, {
+                clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
+              });
+            } else if (index > currentSlide + 1) {
+              gsap.set(project, {
+                clipPath:
+                  "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+              });
+            }
+          });
+        },
+      });
 
-    // Force a refresh once everything is in place
-    ScrollTrigger.refresh();
+      // Ensure the first slide is visible immediately
+      gsap.set(projects[0], {
+        clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
+      });
+
+      // Force a refresh once everything is in place
+      ScrollTrigger.refresh();
+
+      return trigger;
+    };
+
+    // Add delay to ensure content is visible after loader
+    const timer = setTimeout(() => {
+      const trigger = initCarousel();
+      
+      // Store cleanup function
+      return () => {
+        if (trigger) trigger.kill();
+        ScrollTrigger.getAll().forEach((t) => t.kill());
+      };
+    }, 100);
 
     // Cleanup on unmount
     return () => {
-      trigger.kill();
+      clearTimeout(timer);
       ScrollTrigger.getAll().forEach((t) => t.kill());
     };
   }, []);
@@ -128,7 +157,7 @@ export default function Marcas() {
     >
       <div className="app" ref={container}>
         <section className="carousel" id="Marcas">
-          {carouselItems.map((item) => (
+          {carouselItems.map((item, index) => (
             <div
               key={item.id}
               id={`project-${item.id}`}
@@ -136,7 +165,7 @@ export default function Marcas() {
               // Default clipPath so only the first one is "fully shown"
               style={{
                 clipPath:
-                  item.id === "01"
+                  index === 0
                     ? "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)"
                     : "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
               }}

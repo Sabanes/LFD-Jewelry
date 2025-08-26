@@ -7,11 +7,6 @@ import { useLanguage } from "../i18n/languageContext";
 
 const logos = [
   {
-    name: "LFD Group",
-    src: "/LogosLFD/logoblack.png",
-    alt: "LFD Group main logo"
-  },
-  {
     name: "Terzihan",
     src: "/LogosLFD/TERZIHAN.avif",
     alt: "Terzihan logo"
