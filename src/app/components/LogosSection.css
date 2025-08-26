@@ -13,14 +13,6 @@
   text-align: center;
 }
 
-.section-title {
-  font-size: 3rem;
-  font-weight: 300;
-  color: #2c2c2c;
-  margin-bottom: 6rem;
-  letter-spacing: 0.08em;
-  opacity: 0;
-}
 
 .logos-grid {
   display: grid;
@@ -56,6 +48,7 @@
   transition: transform 0.3s ease;
 }
 
+
 @media (max-width: 1024px) {
   .logos-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -67,17 +60,13 @@
     height: 140px;
     padding: 1.75rem;
   }
+  
 }
 
 @media (max-width: 768px) {
   .logos-section {
     padding: 6rem 2rem;
     min-height: 75vh;
-  }
-  
-  .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 4.5rem;
   }
   
   .logos-grid {
@@ -91,6 +80,7 @@
     height: 120px;
     padding: 1.5rem;
   }
+  
 }
 
 @media (max-width: 640px) {
@@ -104,17 +94,13 @@
     height: 130px;
     padding: 1.5rem;
   }
+  
 }
 
 @media (max-width: 480px) {
   .logos-section {
     padding: 5rem 1.5rem;
     min-height: 70vh;
-  }
-  
-  .section-title {
-    font-size: 2rem;
-    margin-bottom: 4rem;
   }
   
   .logos-grid {
@@ -126,4 +112,5 @@
     height: 120px;
     padding: 1.25rem;
   }
+  
 }

@@ -1,86 +1,13 @@
 "use client";
 
 import Head from "next/head";
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
-import { carouselItems } from "./marcas/carouselItems";
+import { ReactLenis } from "@studio-freight/react-lenis";
 import LogosSection from "./components/LogosSection";
-import ProductShowcase from "./components/ProductShowcase";
 
 import "./home.css";
 import "./components/LogosSection.css";
-import "./components/ProductShowcase.css";
-
-gsap.registerPlugin(useGSAP);
-gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
-  const container = useRef();
-
-
-  // handles carousel slide transitions with clip-path animations
-  useGSAP(
-    () => {
-      if (typeof window === "undefined") return;
-
-      const projects = gsap.utils.toArray(".project");
-
-      ScrollTrigger.create({
-        trigger: ".carousel",
-        start: "top top",
-        end: `+=${window.innerHeight * (projects.length - 1)}`,
-        pin: true,
-        pinSpacing: true,
-        scrub: 1,
-        invalidateOnRefresh: true,
-        onUpdate: (self) => {
-          const progress = self.progress * (projects.length - 1);
-          const currentSlide = Math.floor(progress);
-          const slideProgress = progress - currentSlide;
-
-          if (currentSlide < projects.length - 1) {
-            gsap.set(projects[currentSlide], {
-              clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-            });
-
-            const nextSlideProgress = gsap.utils.interpolate(
-              "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-              "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-              slideProgress
-            );
-
-            gsap.set(projects[currentSlide + 1], {
-              clipPath: nextSlideProgress,
-            });
-          }
-
-          projects.forEach((project, index) => {
-            if (index < currentSlide) {
-              gsap.set(project, {
-                clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-              });
-            } else if (index > currentSlide + 1) {
-              gsap.set(project, {
-                clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-              });
-            }
-          });
-        },
-      });
-
-      gsap.set(projects[0], {
-        clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-      });
-
-      return () => {
-        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-      };
-    },
-    { scope: container }
-  );
 
   return (
     <>
@@ -147,19 +74,8 @@ export default function Home() {
           touchMultiplier: 2,
         }}
       >
-        <div className="app" ref={container}>
-          <section className="hero" id="Início">
-            <div className="hero-logo">
-              <img
-                src="https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/ue5era1m9rnyqtd3vfql"
-                alt="LFD Group logo"
-              />
-            </div>
-          </section>
-          
+        <div className="app">
           <LogosSection />
-          
-          <ProductShowcase />
         </div>
       </ReactLenis>
     </>

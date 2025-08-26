@@ -7,6 +7,11 @@ import { useLanguage } from "../i18n/languageContext";
 
 const logos = [
   {
+    name: "LFD Group",
+    src: "/LogosLFD/logoblack.png",
+    alt: "LFD Group main logo"
+  },
+  {
     name: "Terzihan",
     src: "/LogosLFD/TERZIHAN.avif",
     alt: "Terzihan logo"
@@ -59,28 +64,7 @@ export default function LogosSection() {
 
   useGSAP(
     () => {
-      const title = containerRef.current.querySelector(".section-title");
       const logoElements = gsap.utils.toArray(".logo-item");
-
-      // Title animation
-      gsap.fromTo(title,
-        {
-          opacity: 0,
-          y: 50
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: ".logos-section",
-            start: "top 85%",
-            end: "bottom 20%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
 
       // Logo elements animation
       gsap.fromTo(logoElements,
@@ -96,7 +80,6 @@ export default function LogosSection() {
           duration: 0.8,
           stagger: 0.15,
           ease: "back.out(1.7)",
-          delay: 0.3,
           scrollTrigger: {
             trigger: ".logos-section",
             start: "top 80%",
@@ -112,7 +95,6 @@ export default function LogosSection() {
   return (
     <section className="logos-section" ref={containerRef}>
       <div className="logos-container">
-        <h2 className="section-title">{dictionary.brands?.title || "Marcas que Representamos"}</h2>
         <div className="logos-grid">
           {logos.map((logo, index) => (
             <div key={logo.name} className="logo-item">
