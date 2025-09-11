@@ -42,13 +42,6 @@ const brandData = [
     url: "https://www.borsarigioielli.com/en/",
   },
   {
-    id: "Orchid",
-    logo: "/LogosLFD/Orchid.avif",
-    bg: "https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/bjoo1kg7xqx5mrmur2ww",
-    description: "Elegância e sofisticação intemporais. Orchid representa a fusão perfeita entre design contemporâneo e artesanato tradicional, criando joias que celebram a beleza natural através de formas orgânicas.",
-    url: "https://theorchidjewelry.com/",
-  },
-  {
     id: "Favre Leuba",
     logo: "/LogosLFD/favreleubalogo.jpg",
     bg: "https://res.cloudinary.com/dcraqvlmb/image/upload/v1756144482/6b31765c-c427-4a87-9e55-20f44c301985_1_ywvvpa.jpg",

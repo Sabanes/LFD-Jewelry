@@ -19,7 +19,7 @@ export default function Home() {
         />
         <meta
           name="keywords"
-          content="LFD, Group, Luxury Jewelry, Lisbon, Istanbul, Terzihan, Dorica, Orchid, Joalharia"
+          content="LFD, Group, Luxury Jewelry, Lisbon, Istanbul, Terzihan, Dorica, Joalharia"
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://yourwcebsite.com/" />

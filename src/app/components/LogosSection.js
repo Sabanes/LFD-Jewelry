@@ -32,11 +32,6 @@ const logos = [
     alt: "Borsari Gioielli logo"
   },
   {
-    name: "Orchid",
-    src: "/LogosLFD/Orchid.avif",
-    alt: "Orchid logo"
-  },
-  {
     name: "Favre Leuba",
     src: "/LogosLFD/favreleubalogo.jpg",
     alt: "Favre Leuba logo"

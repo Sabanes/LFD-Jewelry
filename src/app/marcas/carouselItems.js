@@ -31,12 +31,6 @@ export const carouselItems = [
     url: "https://www.borsarigioielli.com/en/",
   },
   {
-    id: "Orchid",
-    title: "Elegância e sofisticação intemporais.",
-    bg: "https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/bjoo1kg7xqx5mrmur2ww",
-    url: "https://theorchidjewelry.com/",
-  },
-  {
     id: "Classica",
     title: "Luxo atemporal com herança cultural.",
     bg: "https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/qfxwox1in9yltezowiwv",
