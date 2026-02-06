@@ -7,7 +7,7 @@ const WebsiteLoader = ({ onLoadingComplete }) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // Animate progress bar over 5 seconds
+    // Animate progress bar over 4 seconds
     const progressInterval = setInterval(() => {
       setProgress(prev => {
         if (prev >= 100) {
@@ -16,16 +16,16 @@ const WebsiteLoader = ({ onLoadingComplete }) => {
         }
         return prev + 1; // 100 / 100 steps for smooth animation
       });
-    }, 50); // 5000ms / 100 steps = 50ms per step
+    }, 40); // 4000ms / 100 steps = 40ms per step
 
-    // Hide loader after 5 seconds
+    // Hide loader after 4 seconds
     const timer = setTimeout(() => {
       setIsVisible(false);
       // Call completion callback after fade out animation
       setTimeout(() => {
         onLoadingComplete();
       }, 500);
-    }, 5000);
+    }, 4000);
 
     return () => {
       clearTimeout(timer);
