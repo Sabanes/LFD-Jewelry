@@ -7,16 +7,16 @@ export const carouselItems = [
     url: "https://terzihan.com/",
   },
   {
-    id: "Montegrappa",
-    title: "Elegância e sofisticação intemporais.",
-    bg: "https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/ijle4ilduhdog0kjjjil",
-    url: "https://www.montegrappa.com/",
-  },
-  {
     id: "Mirco Visconti",
     title: "Valenza, Since 1947.",
     bg: "/LogosLFD/mirco_visconti_model.webp",
     url: "https://www.mircovisconti.com/",
+  },
+  {
+    id: "Montegrappa",
+    title: "Elegância e sofisticação intemporais.",
+    bg: "https://res.cloudinary.com/dcraqvlmb/image/upload/f_auto,q_auto/v1/LFD/ijle4ilduhdog0kjjjil",
+    url: "https://www.montegrappa.com/",
   },
   {
     id: "Mimi",

@@ -9,6 +9,11 @@ const logos = [
     alt: "Terzihan logo",
   },
   {
+    name: "Mirco Visconti",
+    src: "/LogosLFD/mircovisconti.svg",
+    alt: "Mirco Visconti logo",
+  },
+  {
     name: "Montegrappa",
     src: "/LogosLFD/Montegrappa.svg",
     alt: "Montegrappa logo",
@@ -42,11 +47,6 @@ const logos = [
     name: "Daniel Wellington",
     src: "/LogosLFD/wellington.png",
     alt: "Daniel Wellington logo",
-  },
-  {
-    name: "Mirco Visconti",
-    src: "/LogosLFD/mircovisconti.svg",
-    alt: "Mirco Visconti logo",
   },
 ];
 
