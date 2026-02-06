@@ -13,7 +13,6 @@
   text-align: center;
 }
 
-
 .logos-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -30,7 +29,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
   transition: all 0.4s ease;
   padding: 2rem;
 }
@@ -48,19 +46,17 @@
   transition: transform 0.3s ease;
 }
 
-
 @media (max-width: 1024px) {
   .logos-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 5rem;
   }
-  
+
   .logo-item {
     width: 280px;
     height: 140px;
     padding: 1.75rem;
   }
-  
 }
 
 @media (max-width: 768px) {
@@ -68,19 +64,18 @@
     padding: 6rem 2rem;
     min-height: 75vh;
   }
-  
+
   .logos-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 4rem;
     max-width: 100%;
   }
-  
+
   .logo-item {
     width: 250px;
     height: 120px;
     padding: 1.5rem;
   }
-  
 }
 
 @media (max-width: 640px) {
@@ -88,13 +83,12 @@
     grid-template-columns: 1fr;
     gap: 3.5rem;
   }
-  
+
   .logo-item {
     width: 280px;
     height: 130px;
     padding: 1.5rem;
   }
-  
 }
 
 @media (max-width: 480px) {
@@ -102,15 +96,14 @@
     padding: 5rem 1.5rem;
     min-height: 70vh;
   }
-  
+
   .logos-grid {
     gap: 3rem;
   }
-  
+
   .logo-item {
     width: 250px;
     height: 120px;
     padding: 1.25rem;
   }
-  
 }

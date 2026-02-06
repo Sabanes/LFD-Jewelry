@@ -39,7 +39,8 @@ const PageTransition = ({ children }) => {
 
   return (
     <TransitionContext.Provider value={{ startTransition, isTransitioning }}>
-      {isTransitioning && (
+      {/* Loader disabled for page transitions */}
+      {/* {isTransitioning && (
         <div className="page-transition-overlay">
           <div className="page-transition-content">
             <div className="transition-logo">
@@ -55,7 +56,7 @@ const PageTransition = ({ children }) => {
             </div>
           </div>
         </div>
-      )}
+      )} */}
       <div className={`page-content ${isTransitioning ? 'transitioning' : ''}`}>
         {displayChildren}
       </div>
