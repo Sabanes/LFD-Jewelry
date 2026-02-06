@@ -1,7 +1,7 @@
 "use client";
 
 import Head from "next/head";
-import { ReactLenis } from "@studio-freight/react-lenis";
+import { ReactLenis } from "lenis/react";
 import LogosSection from "./components/LogosSection";
 
 import "./home.css";

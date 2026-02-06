@@ -33,7 +33,7 @@ const WebsiteLoader = ({ onLoadingComplete }) => {
     };
   }, [onLoadingComplete]);
 
-  if (!isVisible) return null;
+
 
   return (
     <div className={`website-loader ${!isVisible ? 'fade-out' : ''}`}>
