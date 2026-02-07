@@ -10,7 +10,7 @@ const logos = [
   },
   {
     name: "Mirco Visconti",
-    src: "/LogosLFD/mircovisconti.svg",
+    src: "/LogosLFD/newmirco.png",
     alt: "Mirco Visconti logo",
   },
   {
